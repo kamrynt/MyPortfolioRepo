@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Save</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0; 
+      padding: 0; 
+      overflow: hidden;
+      background: #001442;
+      font-family: 'Agbalumo', sans-serif;
+    }
+
+    header {
+      background-color: #001442;
+      padding: 1rem;
+    }
+    header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+    }
+    header nav a:hover {
+      background-color: #4287f5;
+    }
+
+    /* BUBBLES */
+    .bubble {
+      position: absolute;
+      bottom: -50px;
+      background: rgba(159, 122, 177, 0.3);
+      border-radius: 50%;
+      animation: floatUp linear infinite; 
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-120vh);
+      }
+    }
+    #bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    /* SAVE BOX */
+    .save-box {
+      background-color: #7693E3;
+      color: #001AD1;
+      width: 220px;
+      height: 160px;
+      position: absolute;
+      left: 220px;
+      bottom: 400px;
+      z-index: 2;
+      padding: 0px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      
+    }
+    .save-button {
+      display: block; 
+      width: 150px;
+      margin: 1rem auto; 
+      padding: 0rem 2rem;
+      font-size: 1.5rem;
+      color: #001AD1;
+      background-color: #7693E3;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: Agbalumo;
+    }
+    .save-button:hover {
+      background-color: #001442;
+      color: #ffffff;
+    }
+
+    /* MUSIC PLAYER BOX */
+    .music-player-container {
+      background-color: #7693E3;
+      color: #001AD1;
+      width: 500px;
+      height: 160px;
+      position: absolute;
+      left: 500px;
+      bottom: 400px;
+      z-index: 2;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+      /* We'll use flexbox to position cover + controls side-by-side */
+      display: flex;
+      align-items: center;     /* Vertically center everything */
+      justify-content: center; /* Horizontal centering space-around or center */
+      gap: 1rem;               /* Space between cover and controls */
+    }
+
+    /* ALBUM COVER IMAGE */
+    .cover {
+      max-width: 100px;
+      max-height: 100px;
+      border-radius: 8px;
+      object-fit: cover;  /* Crop or 'contain' if you prefer showing entire image */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* CONTROLS WRAPPER */
+    .music-player-controls {
+      display: inline-block;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+
+      /* Extra optional styling? 
+         background: #fff; 
+         border-radius: 4px; 
+         padding: 0.5rem; */
+    }
+
+    /* CONTROL BUTTONS */
+    .music-player-controls button {
+        background-color: #7693E3;
+      color: #FFA5B7;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 0.3rem 0.6rem;
+      font-size: 1rem;
+    }
+    .music-player-controls button:hover {
+      background: white;
+    }
+
+    /* RANGE SLIDERS */
+    .music-player-controls input[type="range"] {
+      width: 80px;
+      cursor: pointer;
+      background-color: #FFA5B7;
+      color: #FFA5B7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="select-save.html" class="active">Select Save</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SAVE BOX -->
+  <div class="save-box">
+    <button class="save-button" onclick="selectSave(1)">Save 1</button>
+    <button class="save-button" onclick="selectSave(2)">Save 2</button>
+    <button class="save-button" onclick="selectSave(3)">Save 3</button>
+    <br>
+    <a href="index.html" class="save-button">Go Back</a>
+  </div>
+
+  <!-- MUSIC PLAYER BOX -->
+  <div class="music-player-container">
+    <!-- ALBUM COVER -->
+    <img id="coverArt" class="cover" src="cover.jpg" alt="Song Cover" />
+    
+    <!-- AUDIO ELEMENT -->
+    <audio id="audioPlayer">
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- CONTROLS -->
+    <div class="music-player-controls">
+      <button id="playBtn">&#9658;</button> <!-- play icon -->
+      <button id="pauseBtn">&#10073;&#10073;</button> <!-- pause icon -->
+      <span id="currentTime">0:00</span>
+
+      <input type="range" id="seekBar" value="0" min="0" max="100" />
+      
+      <span id="duration">0:00</span>
+      <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1" />
+    </div>
+  </div>
+
+  <!-- BUBBLES -->
+  <div id="bubbles"></div>
+
+  <script>
+    /* BUBBLES */
+    function createBubbles(numBubbles = 20) {
+      const bubbleContainer = document.getElementById('bubbles');
+      for(let i = 0; i < numBubbles; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        const size = Math.random() * 80 + 20; // bubble size 20px-100px
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        bubble.style.left = Math.random() * 100 + '%';
+        const floatDuration = Math.random() * 5 + 5; // 5s - 10s
+        bubble.style.animationDuration = floatDuration + 's';
+        bubbleContainer.appendChild(bubble);
+      }
+    }
+
+    function selectSave(slot) {
+      alert(`Save ${slot} selected!`);
+      // Additional logic here
+    }
+
+    // --- MUSIC PLAYER LOGIC ---
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const currentTimeSpan = document.getElementById('currentTime');
+    const durationSpan = document.getElementById('duration');
+    const seekBar = document.getElementById('seekBar');
+    const volumeBar = document.getElementById('volumeBar');
+
+    // Hide default controls
+    audioPlayer.controls = false;
+
+    // Format time in mm:ss
+    function formatTime(seconds) {
+      let mins = Math.floor(seconds / 60);
+      let secs = Math.floor(seconds % 60);
+      if (secs < 10) secs = '0' + secs;
+      return `${mins}:${secs}`;
+    }
+
+    // When audio loads, set up
+    audioPlayer.addEventListener('loadedmetadata', () => {
+      durationSpan.textContent = formatTime(audioPlayer.duration);
+      seekBar.max = Math.floor(audioPlayer.duration);
+    });
+
+    // Play
+    playBtn.addEventListener('click', () => {
+      audioPlayer.play();
+    });
+
+    // Pause
+    pauseBtn.addEventListener('click', () => {
+      audioPlayer.pause();
+    });
+
+    // Update current time + seek bar
+    audioPlayer.addEventListener('timeupdate', () => {
+      currentTimeSpan.textContent = formatTime(audioPlayer.currentTime);
+      seekBar.value = Math.floor(audioPlayer.currentTime);
+    });
+
+    // Seek
+    seekBar.addEventListener('input', () => {
+      audioPlayer.currentTime = seekBar.value;
+    });
+
+    // Volume
+    volumeBar.addEventListener('input', () => {
+      audioPlayer.volume = volumeBar.value;
+    });
+
+        // -----------------------------------
+    // 1) SELECT SAVE LOGIC
+    // -----------------------------------
+    
+    // Called when user clicks "Save 1", "Save 2", or "Save 3"
+    function selectSave(slot) {
+        const gameData = {
+    slot: slot,
+    level: 10,
+    score: 2500,
+    items: ["sword", "shield"],
+    // etc...
+  };
+  // Convert object to JSON string
+  localStorage.setItem('gameSave', JSON.stringify(gameData));
+  
+  alert(`Save ${slot} selected! Data stored in localStorage.`);
+}
+
+    // Optionally, load the saved slot on page load
+    function loadSave() {
+  const savedDataStr = localStorage.getItem('gameSave');
+  if (savedDataStr) {
+    const savedData = JSON.parse(savedDataStr);
+    alert(`Loaded save data from slot ${savedData.slot}, level: ${savedData.level}, score: ${savedData.score}`);
+    // Then do something with that data
+  }
+}
+
+    // Page init
+    window.onload = () => {
+        document.querySelectorAll('.save-button').forEach(btn => {
+        const slot = btn.getAttribute('data-slot');
+        const slotData = loadSlotData(slot);
+        if (slotData && slotData.name) {
+          // Update button text if there's a custom name
+          btn.textContent = slotData.name;
+        }
+      });
+      createBubbles(30);
+    };
+    // Attach event listeners to each save button
+    document.querySelectorAll('.save-button').forEach(btn => {
+      // Left-click
+      btn.addEventListener('click', (e) => {
+        const slot = e.target.getAttribute('data-slot');
+        handleLeftClick(slot);
+      });
+
+      // Right-click (contextmenu)
+      btn.addEventListener('contextmenu', (e) => {
+        e.preventDefault(); // Prevent default browser menu
+        const slot = e.target.getAttribute('data-slot');
+        handleRightClick(slot, e.target);
+      });
+    });
+
+    // ------------------------------------------------------
+    // Left-click logic
+    // ------------------------------------------------------
+    function handleLeftClick(slot) {
+      const slotData = loadSlotData(slot);
+      if (!slotData) {
+        // If there's no data for this slot, show a popup
+        alert(`Slot ${slot} is empty!`);
+        // Optionally ask if user wants to create new data:
+        // if (confirm("This slot is empty. Create a new save?")) { ... }
+      } else {
+        // We have data in this slot, proceed with loading or whatever
+        alert(`Loaded data for ${slotData.name || 'Slot ' + slot}.\nData: ${JSON.stringify(slotData)}`);
+      }
+    }
+
+    // ------------------------------------------------------
+    // Right-click logic (rename the slot)
+    // ------------------------------------------------------
+    function handleRightClick(slot, btn) {
+      // Prompt user for new name
+      const newName = prompt(`Enter new name for Slot ${slot}`);
+      if (newName && newName.trim() !== '') {
+        // Load existing data (if any), or create empty
+        let slotData = loadSlotData(slot) || {};
+        // Update the name
+        slotData.name = newName.trim();
+        // Save
+        saveSlotData(slot, slotData);
+        // Update button text
+        btn.textContent = slotData.name;
+      }
+    }
+
+    // ------------------------------------------------------
+    // Utility: load/save slot data in localStorage
+    // ------------------------------------------------------
+    function loadSlotData(slot) {
+      const dataStr = localStorage.getItem(`saveSlot${slot}`);
+      if (dataStr) {
+        return JSON.parse(dataStr);
+      }
+      return null;
+    }
+
+    function saveSlotData(slot, data) {
+      localStorage.setItem(`saveSlot${slot}`, JSON.stringify(data));
+    }
+  </script>
+</body>
+</html>
