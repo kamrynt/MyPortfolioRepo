@@ -50,7 +50,7 @@ body {
     font-size: .5rem;
     font-weight: bold;
     color: #FFA5B7;
-    font-family: Arial, sans-serif;
+    font-family: Agbalumo, sans-serif;
     z-index: 9;
 }
 
@@ -60,17 +60,45 @@ body {
     width: 90%;
     margin-top: 50px; /* Ensures space below rectangle */
     padding: 20px;
-    background: white;
+    background: #FCF8F4;
     border: 15px solid #F4B2B6; /* Pink border */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 4;
 }
+/* Beige Rectangle for Box 2 */
+.second-box::before {
+    content: "";
+    position: absolute;
+    width: 100%; /* Extends slightly beyond the box width */
+    height: 30px; /* Adjust thickness */
+    background: #FFFFFF; /* Beige color */
+    border-top-left-radius: 5px; /* Curved left */
+    border-top-right-radius: 5px; /* Curved right */
+    top: -10px; /* Moves the rectangle above the box */
+    left: 0%; /* Adjust positioning */
+}
+
+/* Beige Rectangle for Box 3 */
+.third-box::before {
+    content: "";
+    position: absolute;
+    width: 100%; /* Extends slightly beyond the box width */
+    height: 30px; /* Adjust thickness */
+    background: #FFFFFF; /* Beige color */
+    border-top-left-radius: 5px; /* Curved left */
+    border-top-right-radius: 5px; /* Curved right */
+    top: -10px; /* Moves the rectangle above the box */
+    left: 0%; /* Adjust positioning */
+}
+
 
 /* Second Box */
 .second-box {
-    background-color: #BBDEFB;
-    color: #333;
+    border-radius: 20px;
+    border-top: #F4B2B6;
+    background-color: #7693E3;
+    color: #001AD1;
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
@@ -94,11 +122,12 @@ nav ul li {
 }
 
 nav ul li a {
+    font-family: Agbalumo, sans-serif;
     text-decoration: none;
-    color: #01579B;
+    color: #001AD1;
     font-weight: bold;
-    font-size: 1.2rem;
-    padding: 10px 15px;
+    font-size: 2rem;
+    padding: 10px 10px;
     display: block;
     border-radius: 5px;
     transition: background 0.3s;
@@ -111,6 +140,7 @@ nav ul li a:hover {
 
 /* Third box - Adjust positioning */
 .third-box {
+    font-family: Agbalumo, sans-serif;
     background-color: #7693E3;
     color: #001AD1;
     width: 200px;
@@ -130,6 +160,12 @@ h1 {
     font-size: 9rem;
     color: #FFA5B7;
     margin-top: -50px; /* Moves it higher */
+}
+h2 {
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 2rem;
+    color: #FFA5B7;
+    margin-top: -100px; /* Moves it higher */
 }
 
 .main-content h2 {
