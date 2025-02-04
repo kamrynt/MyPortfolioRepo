@@ -63,8 +63,33 @@
     }
 
     /* SAVE BOX */
+    .save-box::before {
+    content: "";
+    position: absolute;
+    width: 100%; /* Extends slightly beyond the box width */
+    height: 25px; /* Adjust thickness */
+    background: #FFFFFF; /* Beige color */
+    border-top-left-radius: 5px; /* Curved left */
+    border-top-right-radius: 5px; /* Curved right */
+    top: -10px; /* Moves the rectangle above the box */
+    left: 0%; /* Adjust positioning */
+}
+    .save-box::after {
+      content: "❤️";         /* Could be a FontAwesome icon, too */
+      position: absolute;
+      top: -15px;            /* Slightly above the box’s top edge,
+                                so it overlaps the border. Adjust as needed. */
+      left: 10px;            /* Tweak for horizontal position in the corner */
+
+      font-size: 1.2rem;     /* Make the heart bigger or smaller */
+      z-index: 1;            /* Ensure it's on top of the border and box */
+      background: #7693E3;   /* Matches your box background or a contrasting color */
+      border-radius: 50%;    /* If you want a circle behind the heart */
+      padding: 4px;          /* Spacing around the heart */
+      box-shadow: 0 0 3px rgba(0,0,0,0.3); /* optional */
+    }
     .save-box {
-      background-color: #7693E3;
+      background-color: #d7d9dd;
       color: #001AD1;
       width: 220px;
       height: 160px;
@@ -97,7 +122,37 @@
       color: #ffffff;
     }
 
+    .back-button {
+      display: block; 
+      width: 150px;
+      margin: 1rem auto; 
+      padding: 0rem 2rem;
+      font-size: 1.5rem;
+      color: #001AD1;
+      background-color: #7693E3;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: Agbalumo;
+    }
+    .back-button:hover {
+      background-color: #001442;
+      color: #ffffff;
+    }
+
     /* MUSIC PLAYER BOX */
+    .music-player-container::before {
+    content: "";
+    position: absolute;
+    width: 100%; /* Extends slightly beyond the box width */
+    height: 30px; /* Adjust thickness */
+    background: #FFFFFF; /* Beige color */
+    border-top-left-radius: 5px; /* Curved left */
+    border-top-right-radius: 5px; /* Curved right */
+    top: -10px; /* Moves the rectangle above the box */
+    left: 0%; /* Adjust positioning */
+}
     .music-player-container {
       background-color: #7693E3;
       color: #001AD1;
@@ -113,9 +168,10 @@
 
       /* We'll use flexbox to position cover + controls side-by-side */
       display: flex;
+      flex-direction: column;
       align-items: center;     /* Vertically center everything */
       justify-content: center; /* Horizontal centering space-around or center */
-      gap: 1rem;               /* Space between cover and controls */
+      gap: .5rem;               /* Space between cover and controls */
     }
 
     /* ALBUM COVER IMAGE */
@@ -165,24 +221,13 @@
 </head>
 <body>
 
-  <!-- HEADER / NAV -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="select-save.html" class="active">Select Save</a></li>
-        <li><a href="#">Settings</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <!-- SAVE BOX -->
   <div class="save-box">
     <button class="save-button" onclick="selectSave(1)">Save 1</button>
     <button class="save-button" onclick="selectSave(2)">Save 2</button>
     <button class="save-button" onclick="selectSave(3)">Save 3</button>
-    <br>
-    <a href="index.html" class="save-button">Go Back</a>
+    <br><br>
+    <a href="index.html" class="back-button">Go Back</a>
   </div>
 
   <!-- MUSIC PLAYER BOX -->
