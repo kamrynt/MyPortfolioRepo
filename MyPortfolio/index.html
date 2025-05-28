@@ -3,56 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamryn Tate - Portfolio Game</title>
+    <title>Tate_Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=ADLaM+Display&family=Actor&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Wrapper for positioning elements correctly -->
-    <div class="container-wrapper">
-
-        <div class="beige-rectangle"></div>
-
-        <!-- Thin Rectangle with Portfolio Text -->
-        <div class="thin-rectangle">
-            <span class="portfolio-text">Tate_Portfolio</span>
+    <div class="main-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <span class="portfolio-title">Tate_Portfolio</span>
+            <div class="window-controls">
+                <span>⚪</span>
+                <span>⚪</span>
+                <span>⚪</span>
+            </div>
         </div>
 
-        <!-- Main Container -->
-        <div class="container">
-            <header>
-                <h1>Kamryn Tate</h1>
-                <h2>Game Producer and Data Engineer</h2>
-            </header>
-
-            <!-- SECOND BOX START -->
-            <section class="second-box">
-                <nav>
-                    <ul>
-                        <li><a href="select-save.html">Play</a></li>
-                        <li><a href="#">Resumé</a></li>
-                        <li><a href="#">Exit</a></li>
-                    </ul>
-                </nav>
-            </section>
-            <!-- SECOND BOX END -->
-
-            <!-- THIRD BOX -->
-            <section class="third-box">
-                <p>By Kamryn Tate</p>
-            </section>
-            <!-- THIRD BOX ENDS -->
-
-           
-        </div> <!-- End of .container -->
-
-    </div> <!-- End of .container-wrapper -->
- <footer>
-                <p>© 2025 Kamryn Tate</p>
-            </footer>
-
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="header-window">
+                <div class="header-doodles">
+                    <img src="assets/largepinkstar.png" class="doodle doodle-star" alt="star">
+                    <img src="assets/mediumblueheart.png" class="doodle doodle-heart" alt="heart">
+                    <img src="assets/largepurpleswirl.png" class="doodle doodle-swirl" alt="swirl">
+                    <img src="assets/mediumpinkstar.png" class="doodle doodle-mediumpinkstar" alt="medium pink star">
+                    <img src="assets/smallpinkstar.png" class="doodle doodle-smallpinkstar" alt="small pink star">
+                    <img src="assets/largepinkheart.png" class="doodle doodle-largepinkheart" alt="large pink heart">
+                    <img src="assets/small blue squiggle.png" class="doodle doodle-smallsquiggle" alt="small blue squiggle">
+                    <img src="assets/mediumpurpleheart.png" class="doodle doodle-mediumpurpleheart" alt="medium purple heart">
+                    <img src="assets/smallpurpleswirl.png" class="doodle doodle-smallpurpleswirl" alt="small purple swirl">
+                    <img src="assets/mediumpinkheart.png" class="doodle doodle-mediumpinkheart" alt="medium pink heart">
+                    <img src="assets/smallbluestar.png" class="doodle doodle-smallbluestar" alt="small blue star">
+                </div>
+                <div class="header-row">
+                    <div class="avatar-box">
+                        <img src="assets/avatar.png" alt="Kamryn Tate" class="avatar">
+                    </div>
+                    <h1 class="main-title"><span class="main-title-my">My</span> <span class="main-title-portfolio">Portfolio</span></h1>
+                </div>
+                <div class="header-windows-overlap">
+                    <div class="audio-window windowed">
+                        <div class="window-bar"><span class="window-x">X</span></div>
+                        <span class="audio-title">By Kamryn Tate</span>
+                        <div class="audio-controls">
+                            <button class="backward">&#171;</button>
+                            <button class="play-pause">&#9658;</button>
+                            <button class="forward">&#187;</button>
+                            <div class="audio-progress"><div class="audio-progress-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="nav-window windowed">
+                        <div class="window-bar"><span class="window-x">X</span></div>
+                        <button class="nav-button play">Play</button>
+                        <button class="nav-button resume">Resumé</button>
+                        <button class="nav-button exit">Exit</button>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="left-col">
+                        <div class="section-card hello-card">
+                            <h2>Hello!</h2>
+                            <p>My name is Kamryn Tate and I am a passionate game producer.<br>I've recently graduated from Howard University with a B.S. in Computer Science. During those four years, I explored gaming ranging from esports to TTRPG. The leadership roles in those organizations allowed me to connect with my community and learn about games as a whole.</p>
+                        </div>
+                        <div class="education-card section-card">
+                            <div class="education-inner">
+                                <h2>Education</h2>
+                                <p>Howard University · Washington D.C.<br>May 2025<br>B.S. Computer Science</p>
+                            </div>
+                        </div>
+                        <div class="section-card work-card">
+                            <h2>Work Experience</h2>
+                            <ul>
+                                <li><b>Data Engineer Intern</b><br>Creative Artists Agency, Beverly Hills, CA<br>Jun 2023 – Aug 2024<br>• Engineered real-time sports data pipelines in Python, reducing latency by 15%<br>• Analyzed and cleaned 1,000+ data entries<br>• Automated ETL processes with Python, cutting manual report editing time by 40%<br>• Collaborated with analytics and marketing teams to translate metrics into actionable insights<br>• Organized shareholder meetings to discuss requirements and expectations of the data</li>
+                                <li><b>Esports Event Production Intern</b><br>Riot Games (Remote)<br>Jun 2022 – Aug 2022<br>• Coordinated logistics for a 23,500-attendee League of Legends tournament, ensuring seamless operations<br>• Liaised with broadcast, marketing, and security teams to synchronize live event activities<br>• Designed and analyzed post-event surveys, generating recommendations for future improvements<br>• Managed schedules for 50 volunteers and vendors, maintaining 95% on-time performance<br>• Optimized crowd engagement strategies, boosting satisfaction scores by 20%</li>
+                            </ul>
+                        </div>
+                        <div class="section-card systems-card">
+                            <h2>Systems</h2>
+                            <ul>
+                                <li>Unity</li>
+                                <li>Godot</li>
+                                <li>Unreal</li>
+                                <li>JIRA</li>
+                                <li>GitHub</li>
+                                <li>Figma</li>
+                                <li>Canva</li>
+                                <li>Visual Studio Code</li>
+                                <li>SQL Server Management</li>
+                                <li>Monday</li>
+                                <li>Azure Data Studio</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <div class="photo-card">
+                            <img src="assets/kamrynphoto.png" alt="Kamryn Tate photo">
+                        </div>
+                        <div class="section-card extracurriculars-card">
+                            <h2>Extra-Curriculars</h2>
+                            <ul>
+                                <li><b>Women's Liaison</b><br>Howard University Gaming Society<br>Aug 2023 – May 2025<br>• Organized monthly inclusive gaming nights, increasing average attendance from 4 to 10<br>• Built a Discord server to foster community and development</li>
+                                <li><b>Event Coordinator</b><br>Howard University Esports<br>Sep 2022 – May 2023<br>• Planned and executed 6 campus tournaments, handling venue, tech, and vendor coordination<br>• Launched social media campaigns that increased registrations by 50%</li>
+                            </ul>
+                        </div>
+                        <div class="section-card contact-card">
+                            <h2>Contact</h2>
+                            <ul style="list-style:none;padding:0;">
+                                <li><img src="assets/emailicon.png" alt="Email" style="width:22px;vertical-align:middle;margin-right:8px;">kamryntate@gmail.com</li>
+                                <li><img src="assets/githubicon.png" alt="Github" style="width:22px;vertical-align:middle;margin-right:8px;"><a href="https://github.com/kamrynt" target="_blank" rel="noopener">github.com/kamrynt</a></li>
+                                <li><img src="assets/linkedinicon.png" alt="Linkedin" style="width:22px;vertical-align:middle;margin-right:8px;"><a href="https://linkedin.com/in/kamryn-tate-b67ab204" target="_blank" rel="noopener">linkedin.com/in/kamryn-tate-b67ab204</a></li>
+                            </ul>
+                        </div>
+                        <div class="section-card hobbies-card">
+                            <div class="hobbies-inner">
+                                <h2>Hobbies</h2>
+                                <ul>
+                                    <li><img src="assets/cookingicon.png" alt="Cooking"></li>
+                                    <li><img src="assets/gamingicon.png" alt="Gaming"></li>
+                                    <li><img src="assets/readingicon.png" alt="Reading"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
