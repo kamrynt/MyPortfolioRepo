@@ -1,0 +1,19 @@
+{
+  "name": "myportfolio",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server",
+    "dev": "live-server --port=3000 --open=index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2",
+    "sass": "^1.89.0"
+  }
+}

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Save</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0; 
+      padding: 0; 
+      padding-top: 100px; /* Account for navigation bar */
+      background: #001442;
+      font-family: 'Agbalumo', sans-serif;
+    }
+
+    /* Navigation Bar */
+    .navigation-bar {
+      width: 100vw;
+      background: #FFB6C1;
+      border-bottom: 4px solid #A3A3F7;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(139, 114, 190, 0.2);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 3em;
+      padding: 1em 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-link {
+      font-family: 'ADLaM Display', cursive, sans-serif;
+      font-size: 2.4em;
+      color: #2D1B3B;
+      text-decoration: none;
+      padding: 0.5em 1.5em;
+      border-radius: 20px;
+      background: #FFFFFF;
+      border: 3px solid #DA7C9C;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(139, 114, 190, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .nav-link:hover {
+      background: #A3A3F7;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(139, 114, 190, 0.25);
+    }
+
+    .nav-link.active {
+      background: #A3A3F7;
+      color: #FFFFFF;
+      box-shadow: 0 6px 12px rgba(139, 114, 190, 0.25);
+      transform: translateY(-2px);
+    }
+    
+    .nav-link[href="index.html#about-me"] {
+    min-width: 360px;
+}
+
+    .nav-link[href="index.html#case-studies"] {
+    min-width: 396px;
+}
+
+    header {
+      background-color: #001442;
+      padding: 1rem;
+    }
+    header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+    }
+    header nav a:hover {
+      background-color: #4287f5;
+    }
+
+    /* BUBBLES */
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(159, 122, 177, 0.3);
+      border-radius: 50%;
+      animation: floatUp linear infinite; 
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-120vh);
+      }
+    }
+    #bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    /* SAVE BOX */
+    .save-box::before {
+    content: "";
+    position: absolute;
+    width: 100%; /* Extends slightly beyond the box width */
+    height: 50px; /* Adjust thickness */
+    background: #FFFFFF; /* Beige color */
+    border-top-left-radius: 5px; /* Curved left */
+    border-top-right-radius: 5px; /* Curved right */
+    top: -10px; /* Moves the rectangle above the box */
+    left: 0%; /* Adjust positioning */
+}
+    .save-box::after {
+      content: "❤️";         /* Could be a FontAwesome icon, too */
+      position: absolute;
+      top: -5px;            /* Slightly above the box's top edge,
+                                so it overlaps the border. Adjust as needed. */
+      left: 10px;            /* Tweak for horizontal position in the corner */
+
+      font-size: 1.2rem;     /* Make the heart bigger or smaller */
+      z-index: 1;            /* Ensure it's on top of the border and box */
+      background: #7693E3;   /* Matches your box background or a contrasting color */
+      border-radius: 50%;    /* If you want a circle behind the heart */
+      padding: 4px;          /* Spacing around the heart */
+      box-shadow: 0 0 3px rgba(0,0,0,0.3); /* optional */
+    }
+    .save-box {
+      background-color: #2e5ebe;
+      color: #31049b;
+      width: 1880px;
+      height: 1640px;
+      position: absolute;
+      left: 440px;
+      bottom: -100px;
+      z-index: 2;
+      padding: 0px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative; /* Add this to make it a positioning context */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    .save-button {
+      display: block; 
+      width: 1300px;
+      margin: 2rem auto; 
+      padding: 4rem;
+      font-size: 13rem;
+      color: #001AD1;
+      background-color: #7693E3;
+      border: 4px solid #001AD1;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: Agbalumo;
+    }
+    .save-button:hover {
+      background-color: #001442;
+      color: #ffffff;
+    }
+
+    .back-button {
+      position: absolute; /* Position absolutely within the save box */
+      bottom: 40px; /* Distance from bottom */
+      left: 40px; /* Distance from left */
+      width: 300px;
+      padding: 0rem 4rem;
+      font-size: 3rem;
+      color: #001AD1;
+      background-color: #7693E3;
+      border: 4px solid #001AD1;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: Agbalumo;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-button:hover {
+      background-color: #001442;
+      color: #ffffff;
+    }
+
+    /* MUSIC PLAYER BOX */
+    .music-player-container::before {
+    content: "";
+    position: absolute;
+    width: 100%; /* Extends slightly beyond the box width */
+    height: 60px; /* Adjust thickness */
+    background: #FFFFFF; /* Beige color */
+    border-top-left-radius: 10px; /* Curved left */
+    border-top-right-radius: 10px; /* Curved right */
+    top: -20px; /* Moves the rectangle above the box */
+    left: 0%; /* Adjust positioning */
+}
+    .music-player-container {
+      background-color: #7693E3;
+      color: #001AD1;
+      width: 1200px;
+      height: 620px;
+      position: absolute;
+      left: 1000px;
+      bottom: 800px;
+      z-index: 2;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+
+      /* We'll use flexbox to position cover + controls side-by-side */
+      display: flex;
+      flex-direction: column;
+      align-items: center;     /* Vertically center everything */
+      justify-content: center; /* Horizontal centering space-around or center */
+      gap: 1rem;               /* Space between cover and controls */
+    }
+
+    /* ALBUM COVER IMAGE */
+    .cover {
+      max-width: 600px;
+      max-height: 600px;
+      border-radius: 16px;
+      object-fit: cover;  /* Crop or 'contain' if you prefer showing entire image */
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      margin: 20px 0; /* Add vertical margin for spacing */
+      padding: 10px; /* Add padding around the cover art */
+    }
+
+    /* CONTROLS WRAPPER */
+    .music-player-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    /* CONTROL BUTTONS ROW */
+    .control-buttons-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* PROGRESS CONTROLS ROW */
+    .progress-controls-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* CONTROL BUTTONS */
+    .music-player-controls button {
+        background-color: #7693E3;
+      color: #FFA5B7;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      padding: 1.2rem 2.4rem;
+      font-size: 4rem;
+    }
+    .music-player-controls button:hover {
+      background: white;
+    }
+
+    /* RANGE SLIDERS */
+    .music-player-controls input[type="range"] {
+      width: 320px;
+      height: 20px;
+      cursor: pointer;
+      background-color: #FFA5B7;
+      color: #FFA5B7;
+    }
+
+    /* TIME DISPLAY */
+    .music-player-controls span {
+      font-size: 2.4rem;
+      color: #001AD1;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navigation-bar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#about-me" class="nav-link">About Me</a>
+      <a href="index.html#works" class="nav-link">Works</a>
+      <a href="index.html#case-studies" class="nav-link">Case Studies</a>
+      <a href="index.html#certifications" class="nav-link">Certifications</a>
+    </div>
+  </nav>
+
+  <!-- SAVE BOX -->
+  <div class="save-box">
+    <button class="save-button" data-slot="1">Save 1</button>
+    <button class="save-button" data-slot="2">Save 2</button>
+    <button class="save-button" data-slot="3">Save 3</button>
+    <br><br>
+    <a href="index.html" class="back-button">Go Back</a>
+  </div>
+
+  <!-- MUSIC PLAYER BOX -->
+  <div class="music-player-container">
+    <!-- ALBUM COVER -->
+    <img id="coverArt" class="cover" src="assets/cover.jpg" alt="Song Cover" />
+    
+    <!-- AUDIO ELEMENT -->
+    <audio id="audioPlayer">
+      <source src="assets/mutt.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- CONTROLS -->
+    <div class="music-player-controls">
+      <div class="control-buttons-row">
+        <button id="playBtn">&#9658;</button> <!-- play icon -->
+        <button id="pauseBtn">&#10073;&#10073;</button> <!-- pause icon -->
+      </div>
+      <div class="progress-controls-row">
+        <span id="currentTime">0:00</span>
+        <input type="range" id="seekBar" value="0" min="0" max="100" />
+        <span id="duration">0:00</span>
+      </div>
+      <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1" />
+    </div>
+  </div>
+
+  <!-- BUBBLES -->
+  <div id="bubbles"></div>
+
+  <!-- Audio Element for Click Sound -->
+  <audio id="click-sound" preload="auto">
+    <source src="assets/click.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    /* BUBBLES */
+    function createBubbles(numBubbles = 20) {
+      const bubbleContainer = document.getElementById('bubbles');
+      for(let i = 0; i < numBubbles; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        const size = Math.random() * 80 + 20; // bubble size 20px-100px
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        bubble.style.left = Math.random() * 100 + '%';
+        const floatDuration = Math.random() * 5 + 5; // 5s - 10s
+        bubble.style.animationDuration = floatDuration + 's';
+        bubbleContainer.appendChild(bubble);
+      }
+    }
+
+    // ------------------------------------------------------
+    // Utility: load/save slot data in localStorage
+    // ------------------------------------------------------
+    function loadSlotData(slot) {
+      const dataStr = localStorage.getItem(`saveSlot${slot}`);
+      if (dataStr) {
+        return JSON.parse(dataStr);
+      }
+      return null;
+    }
+
+    function saveSlotData(slot, data) {
+      localStorage.setItem(`saveSlot${slot}`, JSON.stringify(data));
+    }
+
+    // ------------------------------------------------------
+    // Left-click logic
+    // ------------------------------------------------------
+    function handleLeftClick(slot) {
+      const slotData = loadSlotData(slot);
+      if (!slotData) {
+        // If there's no data for this slot, show a popup
+        alert(`Slot ${slot} is empty!`);
+        // Optionally ask if user wants to create new data:
+        // if (confirm("This slot is empty. Create a new save?")) { ... }
+      } else {
+        // We have data in this slot, proceed with loading or whatever
+        alert(`Loaded data for ${slotData.name || 'Slot ' + slot}.\nData: ${JSON.stringify(slotData)}`);
+      }
+    }
+
+    // ------------------------------------------------------
+    // Right-click logic (rename the slot)
+    // ------------------------------------------------------
+    function handleRightClick(slot, btn) {
+      // Prompt user for new name
+      const newName = prompt(`Enter new name for Slot ${slot}`);
+      if (newName && newName.trim() !== '') {
+        // Load existing data (if any), or create empty
+        let slotData = loadSlotData(slot) || {};
+        // Update the name
+        slotData.name = newName.trim();
+        // Save
+        saveSlotData(slot, slotData);
+        // Update button text
+        btn.textContent = slotData.name;
+      }
+    }
+
+    // --- MUSIC PLAYER LOGIC ---
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const currentTimeSpan = document.getElementById('currentTime');
+    const durationSpan = document.getElementById('duration');
+    const seekBar = document.getElementById('seekBar');
+    const volumeBar = document.getElementById('volumeBar');
+
+    // Hide default controls
+    audioPlayer.controls = false;
+
+    // Format time in mm:ss
+    function formatTime(seconds) {
+      let mins = Math.floor(seconds / 60);
+      let secs = Math.floor(seconds % 60);
+      if (secs < 10) secs = '0' + secs;
+      return `${mins}:${secs}`;
+    }
+
+    // When audio loads, set up
+    audioPlayer.addEventListener('loadedmetadata', () => {
+      durationSpan.textContent = formatTime(audioPlayer.duration);
+      seekBar.max = Math.floor(audioPlayer.duration);
+    });
+
+    // Play
+    playBtn.addEventListener('click', () => {
+      audioPlayer.play();
+    });
+
+    // Pause
+    pauseBtn.addEventListener('click', () => {
+      audioPlayer.pause();
+    });
+
+    // Update current time + seek bar
+    audioPlayer.addEventListener('timeupdate', () => {
+      currentTimeSpan.textContent = formatTime(audioPlayer.currentTime);
+      seekBar.value = Math.floor(audioPlayer.currentTime);
+    });
+
+    // Seek
+    seekBar.addEventListener('input', () => {
+      audioPlayer.currentTime = seekBar.value;
+    });
+
+    // Volume
+    volumeBar.addEventListener('input', () => {
+      audioPlayer.volume = volumeBar.value;
+    });
+
+    // Page init
+    window.onload = () => {
+      document.querySelectorAll('.save-button').forEach(btn => {
+        const slot = btn.getAttribute('data-slot');
+        const slotData = loadSlotData(slot);
+        if (slotData && slotData.name) {
+          // Update button text if there's a custom name
+          btn.textContent = slotData.name;
+        }
+      });
+      createBubbles(30);
+    };
+
+    // Attach event listeners to each save button
+    document.querySelectorAll('.save-button').forEach(btn => {
+      // Left-click
+      btn.addEventListener('click', (e) => {
+        const slot = e.target.getAttribute('data-slot');
+        handleLeftClick(slot);
+      });
+
+      // Right-click (contextmenu)
+      btn.addEventListener('contextmenu', (e) => {
+        e.preventDefault(); // Prevent default browser menu
+        const slot = e.target.getAttribute('data-slot');
+        handleRightClick(slot, e.target);
+      });
+    });
+
+    // Function to play click sound
+    function playClickSound() {
+      const clickSound = document.getElementById('click-sound');
+      if (clickSound) {
+        clickSound.currentTime = 0; // Reset to beginning
+        clickSound.play().catch(e => console.log('Click sound play failed:', e));
+      }
+    }
+
+    // Add click sound to all buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('button, .nav-link');
+      buttons.forEach(button => {
+        button.addEventListener('click', playClickSound);
+      });
+    });
+  </script>
+</body>
+</html>
