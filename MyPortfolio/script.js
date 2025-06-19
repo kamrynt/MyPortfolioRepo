@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const playPauseBtn = document.querySelector('.play-pause');
     const backwardBtn = document.querySelector('.backward');
     const forwardBtn = document.querySelector('.forward');
-    const progressBar = document.querySelector('.progress');
+    const progressBar = document.querySelector('.audio-progress-bar');
+    const progressIndicator = document.querySelector('.progress-indicator');
 
     let isPlaying = false;
 
@@ -30,16 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
         audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
     });
 
-    // Update progress bar
+    // Update progress bar and indicator
     audio.addEventListener('timeupdate', () => {
         const progress = (audio.currentTime / audio.duration) * 100;
-        progressBar.style.left = `${progress}%`;
+        progressBar.style.width = `${progress}%`;
+        progressIndicator.style.left = `${progress}%`;
     });
 
     // Navigation buttons
     const playBtn = document.querySelector('.nav-button.play');
     const resumeBtn = document.querySelector('.nav-button.resume');
     const exitBtn = document.querySelector('.nav-button.exit');
+
+    console.log('Play button found:', playBtn);
+    console.log('Resume button found:', resumeBtn);
+    console.log('Exit button found:', exitBtn);
 
     // Restore main content reveal on any scroll or wheel event
     const mainContent = document.querySelector('.main-content');
@@ -103,6 +109,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Play button opens select-save.html
     playBtn.addEventListener('click', () => {
+        console.log('Play button clicked!');
+        console.log('Attempting to navigate to select-save.html');
         window.location.href = 'select-save.html';
     });
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                // Calculate offset for fixed navigation
+                const navHeight = document.querySelector('.navigation-bar').offsetHeight;
+                const topBarHeight = document.querySelector('.top-bar').offsetHeight;
+                const totalOffset = navHeight + topBarHeight;
+                
+                let targetPosition;
+                
+                if (targetId === '#home') {
+                    // For home, scroll to the very top
+                    targetPosition = 0;
+                } else {
+                    // For other sections, account for the fixed navigation
+                    targetPosition = targetSection.offsetTop - totalOffset;
+                }
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add active state to navigation links based on scroll position
+    function updateActiveNavLink() {
+        const sections = document.querySelectorAll('.content-section, #home');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let currentSection = '';
+        const scrollPosition = window.pageYOffset;
+        
+        // Check if we're at the very top (home section)
+        if (scrollPosition < 100) {
+            currentSection = 'home';
+        } else {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const navHeight = document.querySelector('.navigation-bar').offsetHeight;
+                const topBarHeight = document.querySelector('.top-bar').offsetHeight;
+                const totalOffset = navHeight + topBarHeight;
+                
+                if (scrollPosition >= (sectionTop - totalOffset - 100) && 
+                    scrollPosition < (sectionTop + sectionHeight - totalOffset - 100)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+        }
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveNavLink);
+    updateActiveNavLink(); // Initial call
 });

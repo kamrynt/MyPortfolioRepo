@@ -12,15 +12,21 @@
         <!-- Top Bar -->
         <div class="top-bar">
             <span class="portfolio-title">Tate_Portfolio</span>
-            <div class="window-controls">
-                <span>⚪</span>
-                <span>⚪</span>
-                <span>⚪</span>
-            </div>
         </div>
 
+        <!-- Navigation Bar -->
+        <nav class="navigation-bar">
+            <div class="nav-container">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about-me" class="nav-link">About Me</a>
+                <a href="#works" class="nav-link">Works</a>
+                <a href="#case-studies" class="nav-link">Case Studies</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+            </div>
+        </nav>
+
         <!-- Header Section -->
-        <div class="header-section">
+        <div id="home" class="header-section">
             <div class="header-window">
                 <div class="header-doodles">
                     <img src="assets/largepinkstar.png" class="doodle doodle-star" alt="star">
@@ -46,16 +52,21 @@
                         <div class="window-bar"><span class="window-x">X</span></div>
                         <span class="audio-title">By Kamryn Tate</span>
                         <div class="audio-controls">
-                            <button class="backward">&#171;</button>
-                            <button class="play-pause">&#9658;</button>
-                            <button class="forward">&#187;</button>
-                            <div class="audio-progress"><div class="audio-progress-bar"></div></div>
+                            <div class="control-buttons">
+                                <button class="backward">&#171;</button>
+                                <button class="play-pause">&#9658;</button>
+                                <button class="forward">&#187;</button>
+                            </div>
+                            <div class="audio-progress">
+                                <div class="audio-progress-bar"></div>
+                                <div class="progress-indicator"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="nav-window windowed">
                         <div class="window-bar"><span class="window-x">X</span></div>
-                        <button class="nav-button play">Play</button>
-                        <button class="nav-button resume">Resumé</button>
+                        <button class="nav-button play" onclick="window.location.href='select-save.html'">Play</button>
+                        <button class="nav-button resume" onclick="window.location.href='assets/resume.pdf'">Resumé</button>
                         <button class="nav-button exit">Exit</button>
                     </div>
                 </div>
@@ -129,6 +140,134 @@
             </div>
         </div>
     </div>
+
+    <!-- About Me Section -->
+    <div id="about-me" class="content-section">
+        <div class="section-card about-me-card">
+            <h2>About Me</h2>
+            <p>I'm Kamryn Tate, a passionate game producer and recent Computer Science graduate from Howard University. My journey in gaming spans from esports to TTRPG, where I've developed strong leadership skills and a deep understanding of game development processes.</p>
+            <p>My experience includes coordinating gaming events, managing community engagement, and working with cross-functional teams to deliver exceptional gaming experiences. I'm particularly interested in creating inclusive gaming environments and leveraging technology to enhance player experiences.</p>
+            <p>Throughout my academic career, I've been deeply involved in the gaming community at Howard University, serving as Women's Liaison for the Gaming Society and Event Coordinator for the Esports team. These roles have taught me the importance of fostering inclusive spaces where everyone feels welcome to participate and grow.</p>
+            <p>My technical background in Computer Science, combined with my hands-on experience in game production and event management, gives me a unique perspective on the intersection of technology and entertainment. I'm passionate about using data-driven approaches to improve user experiences and create more engaging gaming content.</p>
+            <p>As I begin my career in game production, I'm excited to bring my technical skills, leadership experience, and passion for inclusive gaming to create memorable experiences that bring people together through the power of play.</p>
+        </div>
+    </div>
+
+    <!-- Works Section -->
+    <div id="works" class="content-section">
+        <div class="section-card works-card">
+            <h2>Works</h2>
+            <div class="works-grid">
+                <div class="work-item">
+                    <h3>Data Pipeline Engineering</h3>
+                    <p>Developed real-time sports data pipelines at Creative Artists Agency, reducing latency by 15% and automating ETL processes to cut manual report editing time by 40%.</p>
+                </div>
+                <div class="work-item">
+                    <h3>Esports Event Production</h3>
+                    <p>Coordinated logistics for a 23,500-attendee League of Legends tournament at Riot Games, managing schedules for 50 volunteers and optimizing crowd engagement strategies.</p>
+                </div>
+                <div class="work-item">
+                    <h3>Community Building</h3>
+                    <p>As Women's Liaison for Howard University Gaming Society, organized inclusive gaming nights and built a Discord server that increased average attendance from 4 to 10 participants.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Studies Section -->
+    <div id="case-studies" class="content-section">
+        <div class="section-card case-studies-card">
+            <h2>Case Studies</h2>
+            <div class="case-study">
+                <h3>League of Legends Tournament Optimization</h3>
+                <p><strong>Challenge:</strong> Coordinating a large-scale esports event with 23,500 attendees while maintaining seamless operations across multiple teams.</p>
+                <p><strong>Solution:</strong> Implemented comprehensive logistics management system, liaised with broadcast, marketing, and security teams, and designed post-event surveys for continuous improvement.</p>
+                <p><strong>Results:</strong> Achieved 95% on-time performance, boosted satisfaction scores by 20%, and generated actionable recommendations for future events.</p>
+            </div>
+            <div class="case-study">
+                <h3>Data Pipeline Efficiency Improvement</h3>
+                <p><strong>Challenge:</strong> Manual data processing was time-consuming and error-prone, with significant latency in sports data delivery.</p>
+                <p><strong>Solution:</strong> Engineered real-time sports data pipelines in Python and automated ETL processes to streamline data flow.</p>
+                <p><strong>Results:</strong> Reduced data latency by 15% and cut manual report editing time by 40%, enabling faster decision-making for stakeholders.</p>
+            </div>
+            <div class="case-study">
+                <h3>Howard University Gaming Community Growth</h3>
+                <p><strong>Challenge:</strong> Low participation rates in gaming events, particularly among women, with only 4 average attendees at gaming nights.</p>
+                <p><strong>Solution:</strong> Created inclusive event programming, built a comprehensive Discord server for community engagement, and implemented targeted outreach strategies to increase diversity in gaming spaces.</p>
+                <p><strong>Results:</strong> Increased average attendance from 4 to 10 participants, established a sustainable community platform, and created a more welcoming environment for all gamers.</p>
+            </div>
+            <div class="case-study">
+                <h3>Campus Esports Tournament Series</h3>
+                <p><strong>Challenge:</strong> Limited awareness and participation in campus gaming events, with poor registration rates and low engagement.</p>
+                <p><strong>Solution:</strong> Developed strategic social media campaigns, coordinated with multiple campus departments for venue and technical support, and created engaging tournament formats that appealed to both casual and competitive players.</p>
+                <p><strong>Results:</strong> Successfully planned and executed 6 campus tournaments, increased registrations by 50%, and established a sustainable model for future gaming events at Howard University.</p>
+            </div>
+            <div class="case-study">
+                <h3>Cross-Functional Team Collaboration at CAA</h3>
+                <p><strong>Challenge:</strong> Siloed communication between analytics, marketing, and data teams, leading to inefficient decision-making processes and delayed insights delivery.</p>
+                <p><strong>Solution:</strong> Established regular stakeholder meetings, created standardized reporting templates, and implemented automated data sharing protocols to improve cross-team collaboration.</p>
+                <p><strong>Results:</strong> Improved team coordination by 60%, reduced report delivery time by 30%, and enhanced data-driven decision making across all departments.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div id="certifications" class="content-section">
+        <div class="section-card certifications-card">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <h3>Unity Game Development</h3>
+                    <p>Certified Unity Developer with experience in 2D and 3D game development</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Project Management</h3>
+                    <p>Agile and Scrum methodologies for game development projects</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Data Engineering</h3>
+                    <p>Python programming and ETL process optimization</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Esports Management</h3>
+                    <p>Event coordination and community engagement strategies</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    
+    <!-- Audio Element for Background Music -->
+    <audio id="background-music" preload="auto">
+        <source src="assets/mutt.mp3" type="audio/mpeg">
+        <source src="assets/mutt.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Audio Element for Click Sound -->
+    <audio id="click-sound" preload="auto">
+        <source src="assets/click.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Function to play click sound
+        function playClickSound() {
+            const clickSound = document.getElementById('click-sound');
+            if (clickSound) {
+                clickSound.currentTime = 0; // Reset to beginning
+                clickSound.play().catch(e => console.log('Click sound play failed:', e));
+            }
+        }
+
+        // Add click sound to all buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('button, .nav-link');
+            buttons.forEach(button => {
+                button.addEventListener('click', playClickSound);
+            });
+        });
+    </script>
 </body>
 </html>

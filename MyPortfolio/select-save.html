@@ -9,10 +9,73 @@
     body {
       margin: 0; 
       padding: 0; 
-      overflow: hidden;
+      padding-top: 100px; /* Account for navigation bar */
       background: #001442;
       font-family: 'Agbalumo', sans-serif;
     }
+
+    /* Navigation Bar */
+    .navigation-bar {
+      width: 100vw;
+      background: #FFB6C1;
+      border-bottom: 4px solid #A3A3F7;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(139, 114, 190, 0.2);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 3em;
+      padding: 1em 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-link {
+      font-family: 'ADLaM Display', cursive, sans-serif;
+      font-size: 2.4em;
+      color: #2D1B3B;
+      text-decoration: none;
+      padding: 0.5em 1.5em;
+      border-radius: 20px;
+      background: #FFFFFF;
+      border: 3px solid #DA7C9C;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(139, 114, 190, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .nav-link:hover {
+      background: #A3A3F7;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(139, 114, 190, 0.25);
+    }
+
+    .nav-link.active {
+      background: #A3A3F7;
+      color: #FFFFFF;
+      box-shadow: 0 6px 12px rgba(139, 114, 190, 0.25);
+      transform: translateY(-2px);
+    }
+    
+    .nav-link[href="index.html#about-me"] {
+    min-width: 360px;
+}
+
+    .nav-link[href="index.html#case-studies"] {
+    min-width: 396px;
+}
 
     header {
       background-color: #001442;
@@ -39,7 +102,7 @@
     /* BUBBLES */
     .bubble {
       position: absolute;
-      bottom: -50px;
+      bottom: -100px;
       background: rgba(159, 122, 177, 0.3);
       border-radius: 50%;
       animation: floatUp linear infinite; 
@@ -67,7 +130,7 @@
     content: "";
     position: absolute;
     width: 100%; /* Extends slightly beyond the box width */
-    height: 25px; /* Adjust thickness */
+    height: 50px; /* Adjust thickness */
     background: #FFFFFF; /* Beige color */
     border-top-left-radius: 5px; /* Curved left */
     border-top-right-radius: 5px; /* Curved right */
@@ -77,7 +140,7 @@
     .save-box::after {
       content: "❤️";         /* Could be a FontAwesome icon, too */
       position: absolute;
-      top: -15px;            /* Slightly above the box’s top edge,
+      top: -5px;            /* Slightly above the box's top edge,
                                 so it overlaps the border. Adjust as needed. */
       left: 10px;            /* Tweak for horizontal position in the corner */
 
@@ -89,30 +152,35 @@
       box-shadow: 0 0 3px rgba(0,0,0,0.3); /* optional */
     }
     .save-box {
-      background-color: #d7d9dd;
-      color: #001AD1;
-      width: 220px;
-      height: 160px;
+      background-color: #2e5ebe;
+      color: #31049b;
+      width: 1880px;
+      height: 1640px;
       position: absolute;
-      left: 220px;
-      bottom: 400px;
+      left: 440px;
+      bottom: -100px;
       z-index: 2;
       padding: 0px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
+      position: relative; /* Add this to make it a positioning context */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       
     }
     .save-button {
       display: block; 
-      width: 150px;
-      margin: 1rem auto; 
-      padding: 0rem 2rem;
-      font-size: 1.5rem;
+      width: 1300px;
+      margin: 2rem auto; 
+      padding: 4rem;
+      font-size: 13rem;
       color: #001AD1;
       background-color: #7693E3;
-      border: none;
-      border-radius: 5px;
+      border: 4px solid #001AD1;
+      border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s;
       font-family: Agbalumo;
@@ -123,18 +191,23 @@
     }
 
     .back-button {
-      display: block; 
-      width: 150px;
-      margin: 1rem auto; 
-      padding: 0rem 2rem;
-      font-size: 1.5rem;
+      position: absolute; /* Position absolutely within the save box */
+      bottom: 40px; /* Distance from bottom */
+      left: 40px; /* Distance from left */
+      width: 300px;
+      padding: 0rem 4rem;
+      font-size: 3rem;
       color: #001AD1;
       background-color: #7693E3;
-      border: none;
-      border-radius: 5px;
+      border: 4px solid #001AD1;
+      border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s;
       font-family: Agbalumo;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .back-button:hover {
       background-color: #001442;
@@ -146,54 +219,69 @@
     content: "";
     position: absolute;
     width: 100%; /* Extends slightly beyond the box width */
-    height: 30px; /* Adjust thickness */
+    height: 60px; /* Adjust thickness */
     background: #FFFFFF; /* Beige color */
-    border-top-left-radius: 5px; /* Curved left */
-    border-top-right-radius: 5px; /* Curved right */
-    top: -10px; /* Moves the rectangle above the box */
+    border-top-left-radius: 10px; /* Curved left */
+    border-top-right-radius: 10px; /* Curved right */
+    top: -20px; /* Moves the rectangle above the box */
     left: 0%; /* Adjust positioning */
 }
     .music-player-container {
       background-color: #7693E3;
       color: #001AD1;
-      width: 500px;
-      height: 160px;
+      width: 1200px;
+      height: 620px;
       position: absolute;
-      left: 500px;
-      bottom: 400px;
+      left: 1000px;
+      bottom: 800px;
       z-index: 2;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 
       /* We'll use flexbox to position cover + controls side-by-side */
       display: flex;
       flex-direction: column;
       align-items: center;     /* Vertically center everything */
       justify-content: center; /* Horizontal centering space-around or center */
-      gap: .5rem;               /* Space between cover and controls */
+      gap: 1rem;               /* Space between cover and controls */
     }
 
     /* ALBUM COVER IMAGE */
     .cover {
-      max-width: 100px;
-      max-height: 100px;
-      border-radius: 8px;
+      max-width: 600px;
+      max-height: 600px;
+      border-radius: 16px;
       object-fit: cover;  /* Crop or 'contain' if you prefer showing entire image */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      margin: 20px 0; /* Add vertical margin for spacing */
+      padding: 10px; /* Add padding around the cover art */
     }
 
     /* CONTROLS WRAPPER */
     .music-player-controls {
-      display: inline-block;
-      flex-direction: row;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1.5rem;
+      width: 100%;
+    }
 
-      /* Extra optional styling? 
-         background: #fff; 
-         border-radius: 4px; 
-         padding: 0.5rem; */
+    /* CONTROL BUTTONS ROW */
+    .control-buttons-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* PROGRESS CONTROLS ROW */
+    .progress-controls-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      width: 100%;
     }
 
     /* CONTROL BUTTONS */
@@ -201,10 +289,10 @@
         background-color: #7693E3;
       color: #FFA5B7;
       border: none;
-      border-radius: 4px;
+      border-radius: 16px;
       cursor: pointer;
-      padding: 0.3rem 0.6rem;
-      font-size: 1rem;
+      padding: 1.2rem 2.4rem;
+      font-size: 4rem;
     }
     .music-player-controls button:hover {
       background: white;
@@ -212,20 +300,39 @@
 
     /* RANGE SLIDERS */
     .music-player-controls input[type="range"] {
-      width: 80px;
+      width: 320px;
+      height: 20px;
       cursor: pointer;
       background-color: #FFA5B7;
       color: #FFA5B7;
+    }
+
+    /* TIME DISPLAY */
+    .music-player-controls span {
+      font-size: 2.4rem;
+      color: #001AD1;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation Bar -->
+  <nav class="navigation-bar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#about-me" class="nav-link">About Me</a>
+      <a href="index.html#works" class="nav-link">Works</a>
+      <a href="index.html#case-studies" class="nav-link">Case Studies</a>
+      <a href="index.html#certifications" class="nav-link">Certifications</a>
+    </div>
+  </nav>
+
   <!-- SAVE BOX -->
   <div class="save-box">
-    <button class="save-button" onclick="selectSave(1)">Save 1</button>
-    <button class="save-button" onclick="selectSave(2)">Save 2</button>
-    <button class="save-button" onclick="selectSave(3)">Save 3</button>
+    <button class="save-button" data-slot="1">Save 1</button>
+    <button class="save-button" data-slot="2">Save 2</button>
+    <button class="save-button" data-slot="3">Save 3</button>
     <br><br>
     <a href="index.html" class="back-button">Go Back</a>
   </div>
@@ -233,29 +340,37 @@
   <!-- MUSIC PLAYER BOX -->
   <div class="music-player-container">
     <!-- ALBUM COVER -->
-    <img id="coverArt" class="cover" src="cover.jpg" alt="Song Cover" />
+    <img id="coverArt" class="cover" src="assets/cover.jpg" alt="Song Cover" />
     
     <!-- AUDIO ELEMENT -->
     <audio id="audioPlayer">
-      <source src="song.mp3" type="audio/mpeg">
+      <source src="assets/mutt.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
     <!-- CONTROLS -->
     <div class="music-player-controls">
-      <button id="playBtn">&#9658;</button> <!-- play icon -->
-      <button id="pauseBtn">&#10073;&#10073;</button> <!-- pause icon -->
-      <span id="currentTime">0:00</span>
-
-      <input type="range" id="seekBar" value="0" min="0" max="100" />
-      
-      <span id="duration">0:00</span>
+      <div class="control-buttons-row">
+        <button id="playBtn">&#9658;</button> <!-- play icon -->
+        <button id="pauseBtn">&#10073;&#10073;</button> <!-- pause icon -->
+      </div>
+      <div class="progress-controls-row">
+        <span id="currentTime">0:00</span>
+        <input type="range" id="seekBar" value="0" min="0" max="100" />
+        <span id="duration">0:00</span>
+      </div>
       <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1" />
     </div>
   </div>
 
   <!-- BUBBLES -->
   <div id="bubbles"></div>
+
+  <!-- Audio Element for Click Sound -->
+  <audio id="click-sound" preload="auto">
+    <source src="assets/click.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script>
     /* BUBBLES */
@@ -274,9 +389,53 @@
       }
     }
 
-    function selectSave(slot) {
-      alert(`Save ${slot} selected!`);
-      // Additional logic here
+    // ------------------------------------------------------
+    // Utility: load/save slot data in localStorage
+    // ------------------------------------------------------
+    function loadSlotData(slot) {
+      const dataStr = localStorage.getItem(`saveSlot${slot}`);
+      if (dataStr) {
+        return JSON.parse(dataStr);
+      }
+      return null;
+    }
+
+    function saveSlotData(slot, data) {
+      localStorage.setItem(`saveSlot${slot}`, JSON.stringify(data));
+    }
+
+    // ------------------------------------------------------
+    // Left-click logic
+    // ------------------------------------------------------
+    function handleLeftClick(slot) {
+      const slotData = loadSlotData(slot);
+      if (!slotData) {
+        // If there's no data for this slot, show a popup
+        alert(`Slot ${slot} is empty!`);
+        // Optionally ask if user wants to create new data:
+        // if (confirm("This slot is empty. Create a new save?")) { ... }
+      } else {
+        // We have data in this slot, proceed with loading or whatever
+        alert(`Loaded data for ${slotData.name || 'Slot ' + slot}.\nData: ${JSON.stringify(slotData)}`);
+      }
+    }
+
+    // ------------------------------------------------------
+    // Right-click logic (rename the slot)
+    // ------------------------------------------------------
+    function handleRightClick(slot, btn) {
+      // Prompt user for new name
+      const newName = prompt(`Enter new name for Slot ${slot}`);
+      if (newName && newName.trim() !== '') {
+        // Load existing data (if any), or create empty
+        let slotData = loadSlotData(slot) || {};
+        // Update the name
+        slotData.name = newName.trim();
+        // Save
+        saveSlotData(slot, slotData);
+        // Update button text
+        btn.textContent = slotData.name;
+      }
     }
 
     // --- MUSIC PLAYER LOGIC ---
@@ -331,38 +490,9 @@
       audioPlayer.volume = volumeBar.value;
     });
 
-        // -----------------------------------
-    // 1) SELECT SAVE LOGIC
-    // -----------------------------------
-    
-    // Called when user clicks "Save 1", "Save 2", or "Save 3"
-    function selectSave(slot) {
-        const gameData = {
-    slot: slot,
-    level: 10,
-    score: 2500,
-    items: ["sword", "shield"],
-    // etc...
-  };
-  // Convert object to JSON string
-  localStorage.setItem('gameSave', JSON.stringify(gameData));
-  
-  alert(`Save ${slot} selected! Data stored in localStorage.`);
-}
-
-    // Optionally, load the saved slot on page load
-    function loadSave() {
-  const savedDataStr = localStorage.getItem('gameSave');
-  if (savedDataStr) {
-    const savedData = JSON.parse(savedDataStr);
-    alert(`Loaded save data from slot ${savedData.slot}, level: ${savedData.level}, score: ${savedData.score}`);
-    // Then do something with that data
-  }
-}
-
     // Page init
     window.onload = () => {
-        document.querySelectorAll('.save-button').forEach(btn => {
+      document.querySelectorAll('.save-button').forEach(btn => {
         const slot = btn.getAttribute('data-slot');
         const slotData = loadSlotData(slot);
         if (slotData && slotData.name) {
@@ -372,6 +502,7 @@
       });
       createBubbles(30);
     };
+
     // Attach event listeners to each save button
     document.querySelectorAll('.save-button').forEach(btn => {
       // Left-click
@@ -388,54 +519,22 @@
       });
     });
 
-    // ------------------------------------------------------
-    // Left-click logic
-    // ------------------------------------------------------
-    function handleLeftClick(slot) {
-      const slotData = loadSlotData(slot);
-      if (!slotData) {
-        // If there's no data for this slot, show a popup
-        alert(`Slot ${slot} is empty!`);
-        // Optionally ask if user wants to create new data:
-        // if (confirm("This slot is empty. Create a new save?")) { ... }
-      } else {
-        // We have data in this slot, proceed with loading or whatever
-        alert(`Loaded data for ${slotData.name || 'Slot ' + slot}.\nData: ${JSON.stringify(slotData)}`);
+    // Function to play click sound
+    function playClickSound() {
+      const clickSound = document.getElementById('click-sound');
+      if (clickSound) {
+        clickSound.currentTime = 0; // Reset to beginning
+        clickSound.play().catch(e => console.log('Click sound play failed:', e));
       }
     }
 
-    // ------------------------------------------------------
-    // Right-click logic (rename the slot)
-    // ------------------------------------------------------
-    function handleRightClick(slot, btn) {
-      // Prompt user for new name
-      const newName = prompt(`Enter new name for Slot ${slot}`);
-      if (newName && newName.trim() !== '') {
-        // Load existing data (if any), or create empty
-        let slotData = loadSlotData(slot) || {};
-        // Update the name
-        slotData.name = newName.trim();
-        // Save
-        saveSlotData(slot, slotData);
-        // Update button text
-        btn.textContent = slotData.name;
-      }
-    }
-
-    // ------------------------------------------------------
-    // Utility: load/save slot data in localStorage
-    // ------------------------------------------------------
-    function loadSlotData(slot) {
-      const dataStr = localStorage.getItem(`saveSlot${slot}`);
-      if (dataStr) {
-        return JSON.parse(dataStr);
-      }
-      return null;
-    }
-
-    function saveSlotData(slot, data) {
-      localStorage.setItem(`saveSlot${slot}`, JSON.stringify(data));
-    }
+    // Add click sound to all buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('button, .nav-link');
+      buttons.forEach(button => {
+        button.addEventListener('click', playClickSound);
+      });
+    });
   </script>
 </body>
 </html>
