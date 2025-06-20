@@ -45,7 +45,11 @@
                     <div class="avatar-box">
                         <img src="assets/avatar.png" alt="Kamryn Tate" class="avatar">
                     </div>
-                    <h1 class="main-title"><span class="main-title-my">My</span> <span class="main-title-portfolio">Portfolio</span></h1>
+                    <h1 class="main-title">
+                        <span class="console-text"></span>
+                        <span class="handwritten-text">My Portfolio</span>
+                        <span class="swipe-effect"></span>
+                    </h1>
                 </div>
                 <div class="header-windows-overlap">
                     <div class="audio-window windowed">
@@ -257,6 +261,7 @@
             const clickSound = document.getElementById('click-sound');
             if (clickSound) {
                 clickSound.currentTime = 0; // Reset to beginning
+                clickSound.volume = 0.2; // Set click sound to 20% volume
                 clickSound.play().catch(e => console.log('Click sound play failed:', e));
             }
         }

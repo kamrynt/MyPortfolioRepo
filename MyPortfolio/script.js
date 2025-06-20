@@ -1,4 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Console to handwritten text animation
+    function animateTitle() {
+        const consoleText = document.querySelector('.console-text');
+        const handwrittenText = document.querySelector('.handwritten-text');
+        const swipeEffect = document.querySelector('.swipe-effect');
+        
+        console.log('Animation elements found:', {
+            consoleText: !!consoleText,
+            handwrittenText: !!handwrittenText,
+            swipeEffect: !!swipeEffect
+        });
+        
+        if (!consoleText || !handwrittenText || !swipeEffect) {
+            console.log('Some animation elements not found, skipping animation');
+            return;
+        }
+        
+        console.log('Starting title animation...');
+        
+        const finalText = "> MyPortfolio.exe";
+        let currentText = "";
+        let charIndex = 0;
+        
+        // Type the console text
+        const typeInterval = setInterval(() => {
+            if (charIndex < finalText.length) {
+                currentText += finalText[charIndex];
+                consoleText.textContent = currentText;
+                charIndex++;
+            } else {
+                clearInterval(typeInterval);
+                console.log('Console typing complete, starting morph...');
+                
+                // Wait 1 second, then fade out console text and show handwritten
+                setTimeout(() => {
+                    consoleText.style.opacity = '0';
+                    consoleText.style.transition = 'opacity 0.5s ease-in-out';
+                    
+                    setTimeout(() => {
+                        handwrittenText.style.opacity = '1';
+                        handwrittenText.style.transition = 'opacity 0.5s ease-in-out';
+                        console.log('Handwritten text visible, starting swipe...');
+                        
+                        // Trigger swipe effect after handwritten text appears
+                        setTimeout(() => {
+                            swipeEffect.style.animation = 'swipePastel 0.8s ease-in-out forwards';
+                            console.log('Swipe effect triggered');
+                        }, 500);
+                    }, 500);
+                }, 1000);
+            }
+        }, 150); // Type speed
+    }
+    
+    // Start the animation after a short delay
+    setTimeout(animateTitle, 500);
+
     // Drag functionality for audio player and navigation windows
     function makeDraggable(element) {
         let isDragging = false;
@@ -114,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.pause();
             playPauseBtn.textContent = '▶';
         } else {
+            audio.volume = 0.3; // Set background music to 30% volume
             audio.play();
             playPauseBtn.textContent = '||';
         }
@@ -177,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(button => {
         button.addEventListener('mouseenter', () => {
             hoverSound.currentTime = 0;
-            hoverSound.volume = 0.2;
+            hoverSound.volume = 0.1;
             hoverSound.play();
         });
     });
