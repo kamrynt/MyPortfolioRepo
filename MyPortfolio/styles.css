@@ -740,14 +740,59 @@ body::-webkit-scrollbar-thumb:hover {
     .header-windows-overlap {
         height: 150px; /* Reduced from 180px */
     }
+    .main-content {
+        grid-template-columns: 1fr 1fr; /* Keep two columns but make them equal */
+        gap: 1em;
+        padding: 1em 2vw;
+    }
+    .avatar-box {
+        width: 150px;
+        height: 150px;
+    }
+    .avatar {
+        width: 130px;
+        height: 130px;
+    }
 }
+
+@media (max-width: 1000px) {
+    .main-title {
+        font-size: 2.5em;
+    }
+    .header-window {
+        min-height: 350px;
+        height: 50vh;
+    }
+    .header-windows-overlap {
+        height: 120px;
+    }
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8em;
+        padding: 0.8em 2vw;
+    }
+    .audio-window.windowed, .nav-window.windowed {
+        min-width: 300px;
+        width: 300px;
+        min-height: 150px;
+    }
+    .avatar-box {
+        width: 120px;
+        height: 120px;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 @media (max-width: 900px) {
     body {
         padding-top: 70px; /* Reduced from 100px to maintain thinner navigation padding */
     }
     
     .main-title {
-        font-size: 2.5em; /* Reduced from 11.7em */
+        font-size: 2.2em; /* Reduced from 2.5em */
         letter-spacing: 1px; /* Reduced from 2px */
     }
     .header-window {
@@ -755,7 +800,7 @@ body::-webkit-scrollbar-thumb:hover {
         margin-bottom: 0.5em; /* Reduced from 1em */
     }
     .header-windows-overlap {
-        height: 120px; /* Reduced from 180px */
+        height: 100px; /* Reduced from 120px */
         margin-top: 0.5em; /* Reduced from 1em */
     }
     .audio-window.windowed, .nav-window.windowed {
@@ -765,8 +810,8 @@ body::-webkit-scrollbar-thumb:hover {
         margin: 0.5em 0; /* Reduced from 1em */
         z-index: unset;
         border-radius: 0 0 16px 16px; /* Reduced from 32px */
-        min-width: 300px; /* Reduced from 640px */
-        width: 300px; /* Reduced from 640px */
+        min-width: 280px; /* Reduced from 300px */
+        width: 280px; /* Reduced from 300px */
         min-height: 120px; /* Reduced from 240px */
     }
     .header-windows-overlap {
@@ -782,12 +827,12 @@ body::-webkit-scrollbar-thumb:hover {
         width: 100vw;
     }
     .avatar-box {
-        width: 120px; /* Reduced from 160px */
-        height: 120px; /* Reduced from 160px */
+        width: 100px; /* Reduced from 120px */
+        height: 100px; /* Reduced from 120px */
     }
     .avatar {
-        width: 100px; /* Reduced from 180px */
-        height: 100px; /* Reduced from 180px */
+        width: 80px; /* Reduced from 100px */
+        height: 80px; /* Reduced from 100px */
         border-radius: 16px; /* Reduced from 20px */
     }
     .window-bar {
@@ -929,6 +974,289 @@ body::-webkit-scrollbar-thumb:hover {
 
     .certification-item p {
         font-size: 1em; /* Reduced from 1.3em */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .top-bar {
+        font-size: 1.4em;
+        height: 60px;
+        padding: 0 1.5em;
+    }
+    
+    .nav-link {
+        font-size: 0.9em;
+        padding: 0.15em 0.4em;
+        min-width: auto;
+    }
+    
+    .nav-link[href="#about-me"] {
+        min-width: 70px;
+    }
+    
+    .nav-link[href="#case-studies"] {
+        min-width: 80px;
+    }
+    
+    .main-title {
+        font-size: 1.8em;
+    }
+    
+    .header-window {
+        min-height: 300px;
+        height: 40vh;
+    }
+    
+    .header-windows-overlap {
+        height: 80px;
+    }
+    
+    .audio-window.windowed, .nav-window.windowed {
+        min-width: 250px;
+        width: 250px;
+        min-height: 100px;
+    }
+    
+    .avatar-box {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .avatar {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .main-content {
+        padding: 0.6em 1.5vw;
+        gap: 0.6em;
+    }
+    
+    .section-card h2 {
+        font-size: 1.5em;
+    }
+    
+    .section-card ul, .section-card p {
+        font-size: 0.9em;
+    }
+    
+    .content-section {
+        margin: 0.8em 0;
+        padding: 0 1.5vw;
+    }
+    
+    .about-me-card h2,
+    .works-card h2,
+    .case-studies-card h2,
+    .certifications-card h2 {
+        font-size: 1.3em;
+    }
+    
+    .work-item h3,
+    .case-study h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 50px;
+    }
+    
+    .top-bar {
+        font-size: 1.2em;
+        height: 50px;
+        padding: 0 1em;
+    }
+    
+    .nav-container {
+        gap: 0.3em;
+        padding: 0.2em 0.3em;
+    }
+    
+    .nav-link {
+        font-size: 0.8em;
+        padding: 0.1em 0.3em;
+        border-radius: 8px;
+    }
+    
+    .nav-link[href="#about-me"] {
+        min-width: 60px;
+    }
+    
+    .nav-link[href="#case-studies"] {
+        min-width: 70px;
+    }
+    
+    .main-title {
+        font-size: 1.5em;
+        letter-spacing: 0.5px;
+    }
+    
+    .header-window {
+        min-height: 250px;
+        height: 35vh;
+        border: 15px solid #FFB6C1;
+        border-radius: 15px;
+    }
+    
+    .header-windows-overlap {
+        height: 60px;
+    }
+    
+    .audio-window.windowed, .nav-window.windowed {
+        min-width: 200px;
+        width: 200px;
+        min-height: 80px;
+    }
+    
+    .avatar-box {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .main-content {
+        padding: 0.5em 1vw;
+        gap: 0.5em;
+    }
+    
+    .section-card {
+        padding: 0.8em;
+        margin-bottom: 0.8em;
+    }
+    
+    .section-card h2 {
+        font-size: 1.3em;
+        margin-bottom: 0.4em;
+    }
+    
+    .section-card ul, .section-card p {
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+    
+    .content-section {
+        margin: 0.6em 0;
+        padding: 0 1vw;
+    }
+    
+    .about-me-card,
+    .works-card,
+    .case-studies-card,
+    .certifications-card {
+        padding: 0.8em 0.6em;
+    }
+    
+    .about-me-card h2,
+    .works-card h2,
+    .case-studies-card h2,
+    .certifications-card h2 {
+        font-size: 1.2em;
+        margin-bottom: 0.4em;
+    }
+    
+    .work-item,
+    .case-study {
+        padding: 0.6em;
+        margin-bottom: 0.6em;
+    }
+    
+    .work-item h3,
+    .case-study h3 {
+        font-size: 1em;
+        margin-bottom: 0.4em;
+    }
+    
+    .work-item p,
+    .case-study p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+    
+    .certification-item {
+        padding: 0.6em;
+    }
+    
+    .certification-item h3 {
+        font-size: 1em;
+    }
+    
+    .certification-item p {
+        font-size: 0.9em;
+    }
+    
+    /* Hide some doodles on very small screens */
+    .doodle {
+        display: none;
+    }
+    
+    .doodle-star,
+    .doodle-heart,
+    .doodle-swirl {
+        display: block;
+        width: 40px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.3em;
+    }
+    
+    .header-window {
+        min-height: 200px;
+        height: 30vh;
+        border: 10px solid #FFB6C1;
+    }
+    
+    .audio-window.windowed, .nav-window.windowed {
+        min-width: 180px;
+        width: 180px;
+        min-height: 70px;
+    }
+    
+    .avatar-box {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .section-card h2 {
+        font-size: 1.2em;
+    }
+    
+    .section-card ul, .section-card p {
+        font-size: 0.8em;
+    }
+    
+    .about-me-card h2,
+    .works-card h2,
+    .case-studies-card h2,
+    .certifications-card h2 {
+        font-size: 1.1em;
+    }
+    
+    .work-item h3,
+    .case-study h3 {
+        font-size: 0.95em;
+    }
+    
+    .work-item p,
+    .case-study p {
+        font-size: 0.85em;
     }
 }
 
