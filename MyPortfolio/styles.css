@@ -26,7 +26,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    padding-top: 200px; /* Account for fixed navigation bar */
+    padding-top: 80px; /* Reduced from 120px to make navigation padding thinner */
 }
 
 .main-container {
@@ -51,10 +51,10 @@ body {
     background: var(--light-purple);
     color: var(--main-pink);
     font-family: 'Actor', sans-serif;
-    font-size: 3.3em;
-    height: 128px;
-    padding: 0 4em;
-    border-bottom: 8px solid var(--main-pink);
+    font-size: 1.8em; /* Reduced from 3.3em */
+    height: 70px; /* Reduced from 128px */
+    padding: 0 2em; /* Reduced from 4em */
+    border-bottom: 4px solid var(--main-pink); /* Reduced from 8px */
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     display: flex;
@@ -64,7 +64,7 @@ body {
 }
 
 .window-controls span {
-    font-size: 2.6em;
+    font-size: 1.4em; /* Reduced from 2.6em */
     margin-left: 0.6em;
 }
 
@@ -87,23 +87,23 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 3em;
-    padding: 1em 2em;
+    gap: 1.5em; /* Reduced from 3em */
+    padding: 0.5em 1em; /* Reduced from 1em 2em */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .nav-link {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 2.4em;
+    font-size: 1.2em; /* Reduced from 2.4em */
     color: var(--deep-purple);
     text-decoration: none;
-    padding: 0.5em 1.5em;
-    border-radius: 20px;
+    padding: 0.3em 0.8em; /* Reduced from 0.5em 1.5em */
+    border-radius: 12px; /* Reduced from 20px */
     background: var(--white);
-    border: 3px solid #DA7C9C;
+    border: 2px solid #DA7C9C; /* Reduced from 3px */
     transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(139, 114, 190, 0.15);
+    box-shadow: 0 2px 4px rgba(139, 114, 190, 0.15); /* Reduced shadow */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,18 +112,18 @@ body {
 
 /* Specific widths for longer navigation text */
 .nav-link[href="#about-me"] {
-    min-width: 360px;
+    min-width: 120px; /* Reduced from 360px */
 }
 
 .nav-link[href="#case-studies"] {
-    min-width: 396px;
+    min-width: 130px; /* Reduced from 396px */
 }
 
 .nav-link:hover {
     background: var(--light-purple);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(139, 114, 190, 0.25);
+    box-shadow: 0 4px 8px rgba(139, 114, 190, 0.25); /* Reduced shadow */
 }
 
 .nav-link:active {
@@ -133,7 +133,7 @@ body {
 .nav-link.active {
     background: var(--light-purple);
     color: var(--white);
-    box-shadow: 0 6px 12px rgba(139, 114, 190, 0.25);
+    box-shadow: 0 4px 8px rgba(139, 114, 190, 0.25); /* Reduced shadow */
     transform: translateY(-2px);
 }
 
@@ -146,15 +146,15 @@ body {
     width: 100vw;
     background: none;
     position: relative;
-    margin-top: 6em;
-    border-radius: 40px;
+    margin-top: 3em; /* Reduced from 6em */
+    border-radius: 20px; /* Reduced from 40px */
 }
 .header-window {
     background: var(--white);
-    border-radius: 51px;
-    border: 60px solid #FFB6C1;
+    border-radius: 25px; /* Reduced from 51px */
+    border: 20px solid #FFB6C1; /* Reduced from 60px */
     box-sizing: border-box;
-    padding-right: 96px;
+    padding-right: 30px; /* Reduced from 96px */
     background-clip: padding-box;
     width: 100vw;
     max-width: none;
@@ -172,9 +172,9 @@ body {
 
 /* Place the scrollbar visually on the border */
 .header-window::-webkit-scrollbar {
-    width: 96px;
+    width: 30px; /* Reduced from 96px */
     background: transparent;
-    border-radius: 48px;
+    border-radius: 15px; /* Reduced from 48px */
     z-index: 2;
     position: absolute;
     right: 0;
@@ -184,11 +184,11 @@ body {
 }
 .header-window::-webkit-scrollbar-thumb {
     background: #FFA5B7;
-    border-radius: 48px;
-    border: 24px solid #FFF3F8;
+    border-radius: 15px; /* Reduced from 48px */
+    border: 8px solid #FFF3F8; /* Reduced from 24px */
     z-index: 2;
-    min-height: 160px;
-    box-shadow: 0 0 0 8px #FFB6C1;
+    min-height: 50px; /* Reduced from 160px */
+    box-shadow: 0 0 0 3px #FFB6C1; /* Reduced from 8px */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,19 +201,19 @@ body {
 /* Add arrow buttons at top and bottom of scrollbar */
 .header-window::-webkit-scrollbar-button:single-button:vertical:decrement {
     background: none;
-    height: 48px;
+    height: 20px; /* Reduced from 48px */
     display: flex;
     align-items: center;
     justify-content: center;
-    content: url('data:image/svg+xml;utf8,<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="%23FFF3F8"/><polygon points="24,12 36,28 12,28" fill="%23FFA5B7"/></svg>');
+    content: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="%23FFF3F8"/><polygon points="10,5 15,12 5,12" fill="%23FFA5B7"/></svg>');
 }
 .header-window::-webkit-scrollbar-button:single-button:vertical:increment {
     background: none;
-    height: 48px;
+    height: 20px; /* Reduced from 48px */
     display: flex;
     align-items: center;
     justify-content: center;
-    content: url('data:image/svg+xml;utf8,<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="%23FFF3F8"/><polygon points="12,20 36,20 24,36" fill="%23FFA5B7"/></svg>');
+    content: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="%23FFF3F8"/><polygon points="5,8 15,8 10,15" fill="%23FFA5B7"/></svg>');
 }
 
 .header-doodles {
@@ -330,32 +330,32 @@ body {
 .header-row {
     display: flex;
     align-items: center;
-    gap: 5em;
+    gap: 2.5em; /* Reduced from 5em */
     width: 100%;
     z-index: 2;
 }
 .avatar-box {
-    width: 640px;
-    height: 640px;
-    border-radius: 48px;
+    width: 200px; /* Reduced from 640px */
+    height: 200px; /* Reduced from 640px */
+    border-radius: 24px; /* Reduced from 48px */
     overflow: hidden;
     background: #fff;
     box-shadow: 0 2px 12px #8B72BE22;
     display: flex; align-items: center; justify-content: center;
 }
 .avatar {
-    width: 560px;
-    height: 560px;
+    width: 180px; /* Reduced from 560px */
+    height: 180px; /* Reduced from 560px */
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 20px; /* Reduced from 40px */
 }
 .main-title {
     font-family: 'Agbalumo', cursive;
-    font-size: 23.4em;
+    font-size: 4em; /* Reduced from 23.4em */
     color: #FFA5B7;
     font-weight: bold;
     margin: 0;
-    letter-spacing: 4px;
+    letter-spacing: 2px; /* Reduced from 4px */
     text-align: left;
     line-height: 1;
     z-index: 2;
@@ -374,8 +374,8 @@ body {
     left: 0.1em;
 }
 .header-windows-overlap {
-    height: 340px;
-    margin-top: 2em;
+    height: 200px; /* Reduced from 340px */
+    margin-top: 1em; /* Reduced from 2em */
     position: relative;
 }
 .audio-window.windowed {
@@ -383,12 +383,12 @@ body {
     left: 65%;
     top: 11px;
     z-index: 1;
-    min-width: 1800px;
-    width: 1800px;
-    min-height: 720px;
-    padding: 3em 10em 4em 4em;
-    border-radius: 0 0 64px 64px;
-    box-shadow: 0 16px 0 4px #5F1DF4;
+    min-width: 400px; /* Reduced from 1800px */
+    width: 400px; /* Reduced from 1800px */
+    min-height: 200px; /* Reduced from 720px */
+    padding: 1.5em 2em 2em 1em; /* Reduced from 3em 10em 4em 4em */
+    border-radius: 0 0 32px 32px; /* Reduced from 64px */
+    box-shadow: 0 8px 0 2px #5F1DF4; /* Reduced from 16px 0 4px */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -398,23 +398,23 @@ body {
 .nav-window.windowed {
     position: absolute;
     left: 30%;
-    top: 100px;
+    top: 50px; /* Reduced from 100px */
     z-index: 2;
-    min-width: 1800px;
-    width: 1800px;
-    min-height: 735px;
-    padding: 5em 4em 5em 4em;
-    border-radius: 0 0 64px 64px;
-    box-shadow: 0 16px 0 4px #5F1DF4;
+    min-width: 400px; /* Reduced from 1800px */
+    width: 400px; /* Reduced from 1800px */
+    min-height: 200px; /* Reduced from 735px */
+    padding: 2em 1em 2em 1em; /* Reduced from 5em 4em 5em 4em */
+    border-radius: 0 0 32px 32px; /* Reduced from 64px */
+    box-shadow: 0 8px 0 2px #5F1DF4; /* Reduced from 16px 0 4px */
 }
 .windowed {
     background: #7693E3;
-    border: 4px solid #5F1FF1;
-    border-radius: 38px 38px 32px 32px;
-    box-shadow: 0 8px 0 2px #5F1DF4;
-    min-width: 340px;
-    min-height: 180px;
-    padding: 1.5em 2em 2em 2em;
+    border: 2px solid #5F1FF1; /* Reduced from 4px */
+    border-radius: 19px 19px 16px 16px; /* Reduced from 38px 38px 32px 32px */
+    box-shadow: 0 4px 0 1px #5F1DF4; /* Reduced from 8px 0 2px */
+    min-width: 200px; /* Reduced from 340px */
+    min-height: 100px; /* Reduced from 180px */
+    padding: 0.8em 1em 1em 1em; /* Reduced from 1.5em 2em 2em 2em */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -422,18 +422,18 @@ body {
 }
 .window-bar {
     position: absolute;
-    top: -64px;
+    top: -32px; /* Reduced from -64px */
     left: 0;
     width: 100%;
-    height: 64px;
+    height: 32px; /* Reduced from 64px */
     background: #fce6ff;
-    border-radius: 32px 32px 0 0;
-    border-bottom: 2px solid #5F1FF1;
+    border-radius: 16px 16px 0 0; /* Reduced from 32px 32px 0 0 */
+    border-bottom: 1px solid #5F1FF1; /* Reduced from 2px */
     display: flex;
     align-items: center;
-    padding-left: 2.4em;
+    padding-left: 1.2em; /* Reduced from 2.4em */
     font-family: 'Agbalumo', cursive;
-    font-size: 2.6em;
+    font-size: 1.3em; /* Reduced from 2.6em */
     color: #FFA5B7;
     z-index: 3;
 }
@@ -441,14 +441,14 @@ body {
     color: #FFA5B7;
     font-weight: bold;
     font-size: 1em;
-    margin-right: 1em;
-    left: 10em;
+    margin-right: 0.5em; /* Reduced from 1em */
+    left: 5em; /* Reduced from 10em */
 }
 .audio-title {
     font-family: 'Agbalumo', cursive;
-    font-size: 5em;
+    font-size: 1.5em; /* Reduced from 5em */
     color: #001AD1;
-    margin-bottom: 2em;
+    margin-bottom: 1em; /* Reduced from 2em */
     text-align: center;
     width: 100%;
 }
@@ -456,24 +456,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    gap: 1em; /* Reduced from 2em */
     width: 100%;
     justify-content: center;
 }
 .control-buttons {
     display: flex;
     align-items: center;
-    gap: 3em;
+    gap: 1.5em; /* Reduced from 3em */
     justify-content: center;
 }
 .audio-controls button {
     background: #FFA5B7;
     color: #7693E3;
     border: none;
-    border-radius: 16px;
+    border-radius: 8px; /* Reduced from 16px */
     font-family: 'Agbalumo', cursive;
-    font-size: 3em;
-    padding: 0.6em 2.4em;
+    font-size: 1.5em; /* Reduced from 3em */
+    padding: 0.3em 1.2em; /* Reduced from 0.6em 2.4em */
     cursor: pointer;
     box-shadow: 0 2px 8px #8B72BE22;
     transition: background 0.2s;
@@ -483,19 +483,19 @@ body {
 }
 .audio-progress {
     flex: 1;
-    height: 24px;
+    height: 12px; /* Reduced from 24px */
     background: #fff;
-    border-radius: 12px;
+    border-radius: 6px; /* Reduced from 12px */
     margin: 0;
     position: relative;
-    border: 8px solid #5F1FF1;
-    width: 160%;
-    max-width: 1200px;
+    border: 4px solid #5F1FF1; /* Reduced from 8px */
+    width: 100%; /* Reduced from 160% */
+    max-width: 300px; /* Reduced from 1200px */
 }
 .audio-progress-bar {
     height: 100%;
     background: #5F1FF1;
-    border-radius: 12px;
+    border-radius: 6px; /* Reduced from 12px */
     width: 0%;
     transition: width 0.2s;
 }
@@ -504,10 +504,10 @@ body {
     top: 50%;
     left: 0%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
+    width: 10px; /* Reduced from 20px */
+    height: 10px; /* Reduced from 20px */
     background: #fff;
-    border: 3px solid #5F1FF1;
+    border: 2px solid #5F1FF1; /* Reduced from 3px */
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transition: left 0.2s ease;
@@ -516,26 +516,26 @@ body {
 .nav-window {
     align-items: center;
     justify-content: center;
-    gap: 3em;
-    min-width: 1200px;
-    min-height: 700px;
-    padding-top: 5em;
+    gap: 1.5em; /* Reduced from 3em */
+    min-width: 300px; /* Reduced from 1200px */
+    min-height: 150px; /* Reduced from 700px */
+    padding-top: 2.5em; /* Reduced from 5em */
 }
 .nav-window button {
     background: #7693E3;
     color: #001AD1;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px; /* Reduced from 20px */
     font-family: 'Agbalumo', cursive;
-    font-size: 8em;
-    padding: 0.8em 3.2em;
-    margin-bottom: 1em;
+    font-size: 1.2em; /* Reduced from 2.4em */
+    padding: 0.5em 1.5em; /* Reduced from 1em 3em */
     cursor: pointer;
     box-shadow: 0 2px 8px #8B72BE22;
     transition: background 0.2s;
+    margin: 0.5em; /* Reduced from 1em */
 }
 .nav-window button:hover {
-    background: #FFA5B7;
+    background: #F9C6E0;
 }
 /* Thicker, Figma-style scrollbar */
 body::-webkit-scrollbar {
@@ -556,38 +556,39 @@ body::-webkit-scrollbar-thumb:hover {
     
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 2.5em;
-    padding: 2.5em 5vw;
+    gap: 1.5em; /* Reduced from 2.5em */
+    padding: 1.5em 3vw; /* Reduced from 2.5em 5vw */
     background: var(--background);
     width: 100vw;
     box-sizing: border-box;
-    margin-bottom: 2em;
+    margin-bottom: 1em; /* Reduced from 2em */
     position: relative;
     z-index: 2;
-    margin-top: 110em;
+    margin-top: 3em; /* Reduced from 110em */
 }
 .section-card {
-    border: 4px solid #8B72BE;
-    border-radius: 24px;
-    margin-bottom: 1.5em;
-    box-shadow: 0 2px 12px #8B72BE22;
+    border: 2px solid #8B72BE; /* Reduced from 4px */
+    border-radius: 12px; /* Reduced from 24px */
+    margin-bottom: 1em; /* Reduced from 1.5em */
+    box-shadow: 0 2px 8px #8B72BE22; /* Reduced shadow */
     position: relative;
     z-index: 2;
+    padding: 1em; /* Added padding */
 }
 
 /* Two-column layout for main content */
 .left-col, .right-col {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1em; /* Reduced from 1.5em */
 }
 
 .section-card h2 {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 102.9px;
+    font-size: 1.8em; /* Reduced from 102.9px */
     color: var(--main-purple);
-    margin-bottom: 0.7em;
-    letter-spacing: 3px;
+    margin-bottom: 0.5em; /* Reduced from 0.7em */
+    letter-spacing: 1px; /* Reduced from 3px */
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1.3;
@@ -595,10 +596,10 @@ body::-webkit-scrollbar-thumb:hover {
 
 .section-card ul, .section-card p {
     font-family: 'Actor', 'ADLaM Display', sans-serif;
-    font-size: 4.395em;
+    font-size: 1em; /* Reduced from 4.395em */
     color: var(--deep-purple);
-    line-height: 1.7;
-    letter-spacing: 1.8px;
+    line-height: 1.5; /* Reduced from 1.7 */
+    letter-spacing: 0.5px; /* Reduced from 1.8px */
 }
 
 .section-card ul li img,
@@ -613,13 +614,13 @@ body::-webkit-scrollbar-thumb:hover {
     /* Remove background and border for transparent look */
     background: none;
     border: none;
-    border-radius: 18px;
+    border-radius: 12px; /* Reduced from 18px */
     box-shadow: var(--window-shadow);
-    padding: 0.5em;
+    padding: 0.3em; /* Reduced from 0.5em */
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 320px;
+    min-height: 200px; /* Reduced from 320px */
     width: 100%;
     max-width: 100%;
 }
@@ -627,29 +628,29 @@ body::-webkit-scrollbar-thumb:hover {
 .photo-card img {
     width: 100%;
     max-width: 100%;
-    border-radius: 14px;
+    border-radius: 10px; /* Reduced from 14px */
     object-fit: cover;
 }
 
 /* Audio Player Window */
 .audio-window {
     background: var(--light-purple);
-    border: 3px solid var(--main-pink);
-    border-radius: 18px;
+    border: 2px solid var(--main-pink); /* Reduced from 3px */
+    border-radius: 12px; /* Reduced from 18px */
     box-shadow: var(--window-shadow);
-    padding: 1.2em 2em;
+    padding: 0.8em 1.5em; /* Reduced from 1.2em 2em */
     font-family: 'Actor', sans-serif;
     font-size: 1em;
     color: var(--deep-purple);
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.8em; /* Reduced from 1em */
     align-items: flex-start;
     position: absolute;
-    left: 75 px;
+    left: 75px; /* Fixed typo */
     top: 100px;
     transform: translate(-50%, 0);
-    min-width: 320px;
+    min-width: 250px; /* Reduced from 320px */
     z-index: 2;
 }
 
@@ -657,7 +658,7 @@ body::-webkit-scrollbar-thumb:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    gap: 1em; /* Reduced from 2em */
     width: 100%;
     justify-content: center;
 }
@@ -666,10 +667,10 @@ body::-webkit-scrollbar-thumb:hover {
     background: #FFA5B7;
     color: #7693E3;
     border: none;
-    border-radius: 16px;
+    border-radius: 8px; /* Reduced from 16px */
     font-family: 'Agbalumo', cursive;
-    font-size: 3em;
-    padding: 0.6em 2.4em;
+    font-size: 1.2em; /* Reduced from 3em */
+    padding: 0.3em 1em; /* Reduced from 0.6em 2.4em */
     cursor: pointer;
     box-shadow: 0 2px 8px #8B72BE22;
     transition: background 0.2s;
@@ -681,17 +682,17 @@ body::-webkit-scrollbar-thumb:hover {
 
 .audio-progress {
     flex: 1;
-    height: 20px;
+    height: 12px; /* Reduced from 20px */
     background: var(--pastel-pink);
     border-radius: 3px;
-    margin: 0 0.5em;
+    margin: 0 0.3em; /* Reduced from 0.5em */
     position: relative;
 }
 
 .audio-progress-bar {
     height: 100%;
     background: #5F1FF1;
-    border-radius: 12px;
+    border-radius: 6px; /* Reduced from 12px */
     width: 0%;
     transition: width 0.2s;
 }
@@ -699,65 +700,64 @@ body::-webkit-scrollbar-thumb:hover {
 /* Responsive */
 @media (max-width: 1200px) {
     .main-title {
-        font-size: 6.5em;
+        font-size: 3em; /* Reduced from 6.5em */
     }
     .header-window {
         min-height: 400px;
         height: 60vh;
     }
     .header-windows-overlap {
-        height: 180px;
+        height: 150px; /* Reduced from 180px */
     }
 }
 @media (max-width: 900px) {
     body {
-        padding-top: 150px; /* Reduced padding for mobile */
+        padding-top: 70px; /* Reduced from 100px to maintain thinner navigation padding */
     }
     
     .main-title {
-        font-size: 11.7em;
-        letter-spacing: 2px;
+        font-size: 2.5em; /* Reduced from 11.7em */
+        letter-spacing: 1px; /* Reduced from 2px */
     }
     .header-window {
-        padding: 1.5em 2vw 1em 2vw;
-        margin-bottom: 1em;
+        padding: 1em 2vw 0.5em 2vw; /* Reduced padding */
+        margin-bottom: 0.5em; /* Reduced from 1em */
     }
     .header-windows-overlap {
-        height: 180px;
-        margin-top: 1em;
+        height: 120px; /* Reduced from 180px */
+        margin-top: 0.5em; /* Reduced from 1em */
     }
     .audio-window.windowed, .nav-window.windowed {
         position: static;
         left: unset;
         top: unset;
-        margin: 1em 0;
+        margin: 0.5em 0; /* Reduced from 1em */
         z-index: unset;
-        border-radius: 0 0 32px 32px;
-        min-width: 640px;
-        width: 640px;
-        min-height: 240px;
+        border-radius: 0 0 16px 16px; /* Reduced from 32px */
+        min-width: 300px; /* Reduced from 640px */
+        width: 300px; /* Reduced from 640px */
+        min-height: 120px; /* Reduced from 240px */
     }
     .header-windows-overlap {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1em;
+        gap: 0.5em; /* Reduced from 1em */
     }
     .main-content {
         grid-template-columns: 1fr;
-        gap: 1em;
-        padding: 1em 2vw;
+        gap: 0.8em; /* Reduced from 1em */
+        padding: 0.8em 2vw; /* Reduced from 1em 2vw */
         width: 100vw;
     }
     .avatar-box {
-        width: 160px;
-        height: 160px;
-        border-radius: 24px;
+        width: 120px; /* Reduced from 160px */
+        height: 120px; /* Reduced from 160px */
     }
     .avatar {
-        width: 140px;
-        height: 140px;
-        border-radius: 20px;
+        width: 100px; /* Reduced from 180px */
+        height: 100px; /* Reduced from 180px */
+        border-radius: 16px; /* Reduced from 20px */
     }
     .window-bar {
         top: -32px;
@@ -810,94 +810,94 @@ body::-webkit-scrollbar-thumb:hover {
     .nav-container {
         flex-direction: row;
         justify-content: flex-end;
-        gap: 1em;
-        padding: 0.5em 1em;
+        gap: 0.5em; /* Reduced from 1em */
+        padding: 0.3em 0.5em; /* Reduced from 0.5em 1em */
     }
     
     .nav-link {
-        font-size: 1.8em;
-        padding: 0.4em 1em;
+        font-size: 1em; /* Reduced from 1.8em */
+        padding: 0.2em 0.5em; /* Reduced from 0.4em 1em */
     }
 
     /* Maintain specific widths on mobile */
     .nav-link[href="#about-me"] {
-        min-width: 324px;
+        min-width: 80px; /* Reduced from 324px */
     }
 
     .nav-link[href="#case-studies"] {
-        min-width: 360px;
+        min-width: 90px; /* Reduced from 360px */
     }
 
     /* Content Sections Responsive */
     .content-section {
-        margin: 2em 0;
-        padding: 0 2vw;
+        margin: 1em 0; /* Reduced from 2em */
+        padding: 0 1vw; /* Reduced from 2vw */
     }
 
     .about-me-card,
     .works-card,
     .case-studies-card,
     .certifications-card {
-        padding: 2em 1.5em;
+        padding: 1em 0.8em; /* Reduced from 2em 1.5em */
     }
 
     .about-me-card h2,
     .works-card h2,
     .case-studies-card h2,
     .certifications-card h2 {
-        font-size: 3.2em;
-        margin-bottom: 1em;
+        font-size: 1.5em; /* Reduced from 3.2em */
+        margin-bottom: 0.5em; /* Reduced from 1em */
     }
 
     .about-me-card p {
-        font-size: 1.6em;
+        font-size: 1em; /* Reduced from 1.6em */
     }
 
     .works-grid {
         grid-template-columns: 1fr;
-        gap: 1.5em;
+        gap: 0.8em; /* Reduced from 1.5em */
     }
 
     .work-item {
-        padding: 1.5em;
+        padding: 0.8em; /* Reduced from 1.5em */
     }
 
     .work-item h3 {
-        font-size: 2.2em;
+        font-size: 1.2em; /* Reduced from 2.2em */
     }
 
     .work-item p {
-        font-size: 1.4em;
+        font-size: 1em; /* Reduced from 1.4em */
     }
 
     .case-study {
-        padding: 1.5em;
-        margin-bottom: 1.5em;
+        padding: 0.8em; /* Reduced from 1.5em */
+        margin-bottom: 0.8em; /* Reduced from 1.5em */
     }
 
     .case-study h3 {
-        font-size: 2.4em;
+        font-size: 1.2em; /* Reduced from 2.4em */
     }
 
     .case-study p {
-        font-size: 1.4em;
+        font-size: 1em; /* Reduced from 1.4em */
     }
 
     .certifications-grid {
         grid-template-columns: 1fr;
-        gap: 1.5em;
+        gap: 0.8em; /* Reduced from 1.5em */
     }
 
     .certification-item {
-        padding: 1.5em;
+        padding: 0.8em; /* Reduced from 1.5em */
     }
 
     .certification-item h3 {
-        font-size: 2em;
+        font-size: 1.1em; /* Reduced from 2em */
     }
 
     .certification-item p {
-        font-size: 1.3em;
+        font-size: 1em; /* Reduced from 1.3em */
     }
 }
 
@@ -906,21 +906,21 @@ body::-webkit-scrollbar-thumb:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px 10em, 7em, 2em;
+    padding: 1em 2em; /* Fixed padding syntax and reduced from 0px 10em, 7em, 2em */
     background: #FFA5B7;
-    border-radius: 30.3359px;
+    border-radius: 15px; /* Reduced from 30.3359px */
     color: #2D1B3B;
     font-family: 'Actor', 'ADLaM Display', sans-serif;
     font-size: 1.1em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em; /* Reduced from 1.5em */
     box-shadow: var(--window-shadow);
-    min-height: 200px;
+    min-height: 120px; /* Reduced from 200px */
 }
 
 .hello-card h2,
 .hello-card ul, .hello-card p {
-    padding-left: .6em;
-    padding-right: 4em;
+    padding-left: 0.3em; /* Reduced from .6em */
+    padding-right: 1em; /* Reduced from 4em */
 }
 
 .hello-card h2 {
@@ -929,22 +929,22 @@ body::-webkit-scrollbar-thumb:hover {
 
 .hello-card ul, .hello-card p {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 42.75px;
+    font-size: 1em; /* Reduced from 42.75px */
     color: #fff;
-    line-height: 1.7;
-    letter-spacing: 1.8px;
+    line-height: 1.5; /* Reduced from 1.7 */
+    letter-spacing: 0.5px; /* Reduced from 1.8px */
 }
 
 /* Custom Scrollbar */
 body::-webkit-scrollbar {
-    width: 14px;
+    width: 8px; /* Reduced from 14px */
     background: #F9C6E0;
-    border-radius: 10px;
+    border-radius: 5px; /* Reduced from 10px */
 }
 body::-webkit-scrollbar-thumb {
     background: #FFA5B7;
-    border-radius: 10px;
-    border: 3px solid #F9C6E0;
+    border-radius: 5px; /* Reduced from 10px */
+    border: 2px solid #F9C6E0; /* Reduced from 3px */
 }
 body::-webkit-scrollbar-thumb:hover {
     background: #FFB6C1;
@@ -954,20 +954,20 @@ body::-webkit-scrollbar-thumb:hover {
 .education-card {
     background: #B8ABDD;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #B8ABDD;
     font-family: 'ADLaM Display', sans-serif;
     position: relative;
     overflow: visible;
     width: 100%;
-    min-height: 640px;
+    min-height: 200px; /* Reduced from 640px */
     height: auto;
     box-sizing: border-box;
 }
 
 .education-inner {
     background: #fff;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     width: 98%;
     height: 90%;
     position: absolute;
@@ -990,34 +990,34 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .education-inner h2 {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 102.9px;
+    font-size: 1.8em; /* Reduced from 102.9px */
     color: #8B72BE;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 1px; /* Reduced from 3px */
     line-height: 1.3;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.5em; /* Reduced from 1em */
+    padding-right: 0.5em; /* Reduced from 1em */
 }
 .education-inner p span {
-    font-size: 3.6em;
+    font-size: 1.2em; /* Reduced from 3.6em */
 }
 .education-inner p {
-    font-size: 3.3em;
+    font-size: 1em; /* Reduced from 3.3em */
 }
 
 .work-card {
     background: #9084B1;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #F3F3F3;
     font-family: 'ADLaM Display', sans-serif;
 }
 
 .work-card h2,
 .work-card ul, .work-card p {
-    padding-left: 4em;
-    padding-right: 4em;
+    padding-left: 1em; /* Reduced from 4em */
+    padding-right: 1em; /* Reduced from 4em */
 }
 
 .work-card h2 {
@@ -1026,10 +1026,10 @@ body::-webkit-scrollbar-thumb:hover {
 
 .work-card ul, .work-card p {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 42.75px;
+    font-size: 1em; /* Reduced from 42.75px */
     color: #fff;
-    line-height: 1.7;
-    letter-spacing: 1.8px;
+    line-height: 1.5; /* Reduced from 1.7 */
+    letter-spacing: 0.5px; /* Reduced from 1.8px */
 }
 
 .work-card ul li {
@@ -1039,15 +1039,15 @@ body::-webkit-scrollbar-thumb:hover {
 .systems-card {
     background: #C0B2E9;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #F3F3F3;
     font-family: 'ADLaM Display', sans-serif;
 }
 
 .systems-card h2,
 .systems-card ul, .systems-card p {
-    padding-left: 4em;
-    padding-right: 4em;
+    padding-left: 1em; /* Reduced from 4em */
+    padding-right: 1em; /* Reduced from 4em */
 }
 
 .systems-card h2 {
@@ -1056,36 +1056,36 @@ body::-webkit-scrollbar-thumb:hover {
 
 .systems-card ul, .systems-card p {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 42.75px;
+    font-size: 1em; /* Reduced from 42.75px */
     color: #fff;
-    line-height: 1.7;
-    letter-spacing: 1.8px;
+    line-height: 1.5; /* Reduced from 1.7 */
+    letter-spacing: 0.5px; /* Reduced from 1.8px */
 }
 
 .systems-card ul li {
-    font-size: 85.5px;
+    font-size: 1em; /* Reduced from 85.5px */
 }
 
 .extracurriculars-card {
     background: #C07F8C;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #F3F3F3;
     font-family: 'ADLaM Display', sans-serif;
 }
 
 .extracurriculars-card h2 {
     color: #fff;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.5em; /* Reduced from 1em */
+    padding-right: 0.5em; /* Reduced from 1em */
 }
 
 .extracurriculars-card ul, .extracurriculars-card p {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 42.75px;
+    font-size: 1em; /* Reduced from 42.75px */
     color: #fff;
-    line-height: 1.7;
-    letter-spacing: 1.8px;
+    line-height: 1.5; /* Reduced from 1.7 */
+    letter-spacing: 0.5px; /* Reduced from 1.8px */
 }
 
 .extracurriculars-card ul li {
@@ -1095,7 +1095,7 @@ body::-webkit-scrollbar-thumb:hover {
 .contact-card {
     background: #DBB2BB;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #F3F3F3;
     font-family: 'ADLaM Display', sans-serif;
 }
@@ -1114,20 +1114,20 @@ body::-webkit-scrollbar-thumb:hover {
 .hobbies-card {
     background: #F8A5C2;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #F8A5C2;
     font-family: 'ADLaM Display', sans-serif;
     position: relative;
     overflow: visible;
     width: 100%;
-    min-height: 640px;
+    min-height: 200px; /* Reduced from 640px */
     height: auto;
     box-sizing: border-box;
 }
 
 .hobbies-inner {
     background: #fff;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     width: 98%;
     height: 90%;
     position: absolute;
@@ -1148,19 +1148,19 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .hobbies-card h2 {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.5em; /* Reduced from 1em */
+    padding-right: 0.5em; /* Reduced from 1em */
 }
 
 .hobbies-inner ul {
     display: flex;
-    gap: 2em;
+    gap: 1em; /* Reduced from 2em */
     list-style: none;
     justify-content: center;
     align-items: center;
     padding: 0;
     width: 100%;
-    margin-top: -2em;
+    margin-top: -1em; /* Reduced from -2em */
 }
 .hobbies-inner li {
     text-align: center;
@@ -1170,9 +1170,9 @@ body::-webkit-scrollbar-thumb:hover {
     justify-content: center;
 }
 .hobbies-inner li img {
-    width: 384px !important;
-    height: 384px !important;
-    margin-bottom: 0.5em;
+    width: 80px !important; /* Reduced from 384px */
+    height: 80px !important; /* Reduced from 384px */
+    margin-bottom: 0.3em; /* Reduced from 0.5em */
 }
 
 /* Hide main content on load, reveal on scroll */
@@ -1188,7 +1188,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 @media (min-width: 1400px) {
     .main-title {
-        font-size: 26em;
+        font-size: 5em; /* Reduced from 26em */
     }
 }
 
@@ -1208,18 +1208,18 @@ body, html {
 .extracurriculars-card ul, .extracurriculars-card p,
 .work-card ul, .work-card p,
 .contact-card ul, .contact-card p {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em; /* Reduced from 2em */
+    padding-right: 1em; /* Reduced from 2em */
 }
 
 .systems-card ul, .systems-card p,
 .contact-card ul, .contact-card p {
-    padding-left: 4em;
-    padding-right: 4em;
+    padding-left: 1em; /* Reduced from 4em */
+    padding-right: 1em; /* Reduced from 4em */
 }
 
 .contact-card ul li {
-    padding-left: 1em;
+    padding-left: 0.5em; /* Reduced from 1em */
 }
 
 .education-card h2,
@@ -1228,8 +1228,8 @@ body, html {
 .extracurriculars-card h2,
 .contact-card h2,
 .hobbies-card h2 {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.5em; /* Reduced from 1em */
+    padding-right: 0.5em; /* Reduced from 1em */
 }
 
 .main-content a {
@@ -1250,31 +1250,31 @@ body, html {
 
 /* Content Sections */
 .content-section {
-    margin: 4em 0;
-    padding: 0 5vw;
+    margin: 2em 0; /* Reduced from 4em */
+    padding: 0 3vw; /* Reduced from 5vw */
     width: 100%;
     box-sizing: border-box;
 }
 
 .content-section:target {
-    scroll-margin-top: 200px;
+    scroll-margin-top: 120px; /* Reduced from 200px */
 }
 
 /* About Me Card */
 .about-me-card {
     background: #E8B4CB;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #fff;
     font-family: 'ADLaM Display', sans-serif;
-    padding: 3em;
+    padding: 1.5em; /* Reduced from 3em */
     text-align: center;
 }
 
 .about-me-card h2 {
     color: #fff;
-    font-size: 4.8em;
-    margin-bottom: 1em;
+    font-size: 2em; /* Reduced from 4.8em */
+    margin-bottom: 0.5em; /* Reduced from 1em */
     text-transform: uppercase;
     position: relative;
     display: inline-block;
@@ -1285,12 +1285,12 @@ body, html {
     content: '';
     position: absolute;
     width: 0;
-    height: 8px;
-    bottom: -10px;
+    height: 4px; /* Reduced from 8px */
+    bottom: -5px; /* Reduced from -10px */
     left: 0;
     background-color: #fff;
     transition: width 0.3s ease;
-    border-radius: 4px;
+    border-radius: 2px; /* Reduced from 4px */
 }
 
 .about-me-card h2:hover::after {
@@ -1299,10 +1299,10 @@ body, html {
 
 .about-me-card p {
     font-family: 'Actor', sans-serif;
-    font-size: 4.8em;
+    font-size: 1em; /* Reduced from 4.8em */
     color: #fff;
-    line-height: 1.6;
-    margin-bottom: 1.5em;
+    line-height: 1.5; /* Reduced from 1.6 */
+    margin-bottom: 1em; /* Reduced from 1.5em */
     text-align: left;
 }
 
@@ -1310,16 +1310,16 @@ body, html {
 .works-card {
     background: #B8C5F8;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #fff;
     font-family: 'ADLaM Display', sans-serif;
-    padding: 3em;
+    padding: 1.5em; /* Reduced from 3em */
 }
 
 .works-card h2 {
     color: #fff;
-    font-size: 4.8em;
-    margin-bottom: 1.5em;
+    font-size: 2em; /* Reduced from 4.8em */
+    margin-bottom: 1em; /* Reduced from 1.5em */
     text-align: center;
     text-transform: uppercase;
     position: relative;
@@ -1331,12 +1331,12 @@ body, html {
     content: '';
     position: absolute;
     width: 0;
-    height: 8px;
-    bottom: -10px;
+    height: 4px; /* Reduced from 8px */
+    bottom: -5px; /* Reduced from -10px */
     left: 0;
     background-color: #fff;
     transition: width 0.3s ease;
-    border-radius: 4px;
+    border-radius: 2px; /* Reduced from 4px */
 }
 
 .works-card h2:hover::after {
@@ -1345,30 +1345,30 @@ body, html {
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Reduced from 400px */
+    gap: 1em; /* Reduced from 2em */
 }
 
 .work-item {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 2em;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px; /* Reduced from 16px */
+    padding: 1em; /* Reduced from 2em */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Reduced from 2px */
 }
 
 .work-item h3 {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 4em;
+    font-size: 1.5em; /* Reduced from 4em */
     color: #fff;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em; /* Reduced from 1em */
     text-align: center;
 }
 
 .work-item p {
     font-family: 'Actor', sans-serif;
-    font-size: 3.6em;
+    font-size: 1em; /* Reduced from 3.6em */
     color: #fff;
-    line-height: 1.5;
+    line-height: 1.4; /* Reduced from 1.5 */
     text-align: center;
 }
 
@@ -1376,16 +1376,16 @@ body, html {
 .case-studies-card {
     background: #C8A2C8;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #fff;
     font-family: 'ADLaM Display', sans-serif;
-    padding: 3em;
+    padding: 1.5em; /* Reduced from 3em */
 }
 
 .case-studies-card h2 {
     color: #fff;
-    font-size: 4.8em;
-    margin-bottom: 1.5em;
+    font-size: 2em; /* Reduced from 4.8em */
+    margin-bottom: 1em; /* Reduced from 1.5em */
     text-align: center;
     text-transform: uppercase;
     position: relative;
@@ -1397,12 +1397,12 @@ body, html {
     content: '';
     position: absolute;
     width: 0;
-    height: 8px;
-    bottom: -10px;
+    height: 4px; /* Reduced from 8px */
+    bottom: -5px; /* Reduced from -10px */
     left: 0;
     background-color: #fff;
     transition: width 0.3s ease;
-    border-radius: 4px;
+    border-radius: 2px; /* Reduced from 4px */
 }
 
 .case-studies-card h2:hover::after {
@@ -1411,10 +1411,10 @@ body, html {
 
 .case-study {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 2.5em;
-    margin-bottom: 2em;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px; /* Reduced from 16px */
+    padding: 1.5em; /* Reduced from 2.5em */
+    margin-bottom: 1em; /* Reduced from 2em */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Reduced from 2px */
 }
 
 .case-study:last-child {
@@ -1423,18 +1423,18 @@ body, html {
 
 .case-study h3 {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 4em;
+    font-size: 1.5em; /* Reduced from 4em */
     color: #fff;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.8em; /* Reduced from 1.5em */
     text-align: center;
 }
 
 .case-study p {
     font-family: 'Actor', sans-serif;
-    font-size: 3.6em;
+    font-size: 1em; /* Reduced from 3.6em */
     color: #fff;
-    line-height: 1.6;
-    margin-bottom: 1em;
+    line-height: 1.5; /* Reduced from 1.6 */
+    margin-bottom: 0.5em; /* Reduced from 1em */
 }
 
 .case-study p strong {
@@ -1446,16 +1446,16 @@ body, html {
 .certifications-card {
     background: #F0B5D1;
     border: 1px solid #5F1FF1;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     color: #fff;
     font-family: 'ADLaM Display', sans-serif;
-    padding: 3em;
+    padding: 1.5em; /* Reduced from 3em */
 }
 
 .certifications-card h2 {
     color: #fff;
-    font-size: 4.8em;
-    margin-bottom: 1.5em;
+    font-size: 2em; /* Reduced from 4.8em */
+    margin-bottom: 1em; /* Reduced from 1.5em */
     text-align: center;
     text-transform: uppercase;
     position: relative;
@@ -1467,12 +1467,12 @@ body, html {
     content: '';
     position: absolute;
     width: 0;
-    height: 8px;
-    bottom: -10px;
+    height: 4px; /* Reduced from 8px */
+    bottom: -5px; /* Reduced from -10px */
     left: 0;
     background-color: #fff;
     transition: width 0.3s ease;
-    border-radius: 4px;
+    border-radius: 2px; /* Reduced from 4px */
 }
 
 .certifications-card h2:hover::after {
@@ -1481,30 +1481,30 @@ body, html {
 
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced from 300px */
+    gap: 1em; /* Reduced from 2em */
 }
 
 .certification-item {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 2em;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px; /* Reduced from 16px */
+    padding: 1em; /* Reduced from 2em */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Reduced from 2px */
     text-align: center;
 }
 
 .certification-item h3 {
     font-family: 'ADLaM Display', cursive, sans-serif;
-    font-size: 2.4em;
+    font-size: 1.3em; /* Reduced from 2.4em */
     color: #fff;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em; /* Reduced from 1em */
 }
 
 .certification-item p {
     font-family: 'Actor', sans-serif;
-    font-size: 1.6em;
+    font-size: 1em; /* Reduced from 1.6em */
     color: #fff;
-    line-height: 1.5;
+    line-height: 1.4; /* Reduced from 1.5 */
 }
 
 /* Add underline animation to other section titles */
@@ -1530,12 +1530,12 @@ body, html {
     content: '';
     position: absolute;
     width: 0;
-    height: 8px;
-    bottom: -10px;
+    height: 2px; /* Reduced from 4px */
+    bottom: -3px; /* Reduced from -5px */
     left: 0;
     background-color: #fff;
     transition: width 0.3s ease;
-    border-radius: 4px;
+    border-radius: 1px; /* Reduced from 2px */
 }
 
 .education-card h2:hover::after,
