@@ -1,4 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Drag functionality for audio player and navigation windows
+    function makeDraggable(element) {
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+
+        // Get the window bar element (the draggable handle)
+        const windowBar = element.querySelector('.window-bar');
+        if (!windowBar) return; // Exit if no window bar found
+
+        function dragStart(e) {
+            if (e.type === "touchstart") {
+                initialX = e.touches[0].clientX - xOffset;
+                initialY = e.touches[0].clientY - yOffset;
+            } else {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+            }
+
+            if (e.target === windowBar || windowBar.contains(e.target)) {
+                isDragging = true;
+                element.style.cursor = 'grabbing';
+                element.style.userSelect = 'none';
+            }
+        }
+
+        function dragEnd(e) {
+            initialX = currentX;
+            initialY = currentY;
+            isDragging = false;
+            element.style.cursor = 'grab';
+            element.style.userSelect = 'auto';
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+
+                if (e.type === "touchmove") {
+                    currentX = e.touches[0].clientX - initialX;
+                    currentY = e.touches[0].clientY - initialY;
+                } else {
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                }
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                // Constrain to header section bounds
+                const headerSection = document.querySelector('.header-section');
+                const headerRect = headerSection.getBoundingClientRect();
+                const elementRect = element.getBoundingClientRect();
+                
+                const maxX = headerRect.width - elementRect.width;
+                const maxY = headerRect.height - elementRect.height;
+                
+                currentX = Math.max(0, Math.min(currentX, maxX));
+                currentY = Math.max(0, Math.min(currentY, maxY));
+
+                setTranslate(currentX, currentY, element);
+            }
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+        }
+
+        // Mouse events
+        windowBar.addEventListener('mousedown', dragStart);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', dragEnd);
+
+        // Touch events for mobile
+        windowBar.addEventListener('touchstart', dragStart, { passive: false });
+        document.addEventListener('touchmove', drag, { passive: false });
+        document.addEventListener('touchend', dragEnd);
+
+        // Make window bar look draggable
+        windowBar.style.cursor = 'grab';
+        windowBar.style.userSelect = 'none';
+    }
+
+    // Make audio window draggable
+    const audioWindow = document.querySelector('.audio-window.windowed');
+    if (audioWindow) {
+        makeDraggable(audioWindow);
+    }
+
+    // Make navigation window draggable
+    const navWindow = document.querySelector('.nav-window.windowed');
+    if (navWindow) {
+        makeDraggable(navWindow);
+    }
+
     // Audio Player
     const audio = document.getElementById('background-music');
     const playPauseBtn = document.querySelector('.play-pause');

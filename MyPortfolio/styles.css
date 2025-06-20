@@ -394,6 +394,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* Add support for dragging */
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: none; /* Disable transitions during drag */
 }
 .nav-window.windowed {
     position: absolute;
@@ -406,6 +411,11 @@ body {
     padding: 2em 1em 2em 1em; /* Reduced from 5em 4em 5em 4em */
     border-radius: 0 0 32px 32px; /* Reduced from 64px */
     box-shadow: 0 8px 0 2px #5F1DF4; /* Reduced from 16px 0 4px */
+    /* Add support for dragging */
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: none; /* Disable transitions during drag */
 }
 .windowed {
     background: #7693E3;
@@ -419,6 +429,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Add support for dragging */
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: none; /* Disable transitions during drag */
 }
 .window-bar {
     position: absolute;
@@ -436,7 +451,23 @@ body {
     font-size: 1.3em; /* Reduced from 2.6em */
     color: #FFA5B7;
     z-index: 3;
+    /* Add drag handle styles */
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: background-color 0.2s ease;
 }
+
+.window-bar:hover {
+    background: #f0d0ff;
+    cursor: grabbing;
+}
+
+.window-bar:active {
+    cursor: grabbing;
+    background: #e8c0ff;
+}
+
 .window-x {
     color: #FFA5B7;
     font-weight: bold;
@@ -479,7 +510,7 @@ body {
     transition: background 0.2s;
 }
 .audio-controls button:hover {
-    background: #F9C6E0;
+    background: var(--pastel-pink);
 }
 .audio-progress {
     flex: 1;
